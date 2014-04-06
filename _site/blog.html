@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Victor Jiao - First Post</title>
+        <title>Victor Jiao - Blog</title>
 
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
@@ -37,14 +37,26 @@
 
         <div id="right">
           <div id="content">
-            <h2>First Post</h2>
-<p class="meta">29 Mar 2014</p>
-
-<div class="post">
-<p>first post, test test.
-hello world!</p>
-
+            <div id="home">
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    
+      <li><span>29 Mar 2014</span> &raquo; <a href="/2014/03/29/welcome-to-jekyll.html">First Post</a></li>
+    
+  </ul>
 </div>
+
+<script>
+document.getElementById("highlighted-navlink").removeAttribute("id");
+
+var id = document.createAttribute("id");
+id.value="highlighted-navlink";
+
+var navlinks = document.getElementsByClassName("navlink");
+
+navlinks[3].setAttributeNode(id);
+
+</script>
 
           </div>
 
