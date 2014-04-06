@@ -17,3 +17,20 @@ p {
     padding-bottom: 0em;
     margin: 0;
 }
+
+a:link {/* unvisited link */
+    color: black; 
+    text-decoration: none;
+}      
+a:visited {/* visited link */
+    color: #440000;
+    text-decoration: none;
+}  
+a:hover {/* mouse over link */
+    color:#AA6655;
+    text-decoration: none;
+}  
+a:active {/* selected link */
+    color:#993322;
+    text-decoration: none;
+}  
