@@ -2,24 +2,3 @@
 layout: default
 title: Blog
 ---
-
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
-
-<script>
-document.getElementById("highlighted-navlink").removeAttribute("id");
-
-var id = document.createAttribute("id");
-id.value="highlighted-navlink";
-
-var navlinks = document.getElementsByClassName("navlink");
-
-navlinks[3].setAttributeNode(id);
-
-</script>

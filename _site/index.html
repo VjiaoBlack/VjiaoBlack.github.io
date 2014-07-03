@@ -9,65 +9,15 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/main.css">
 
+        <!-- Javascript for the fog -->
+        <script src="javascript/fog.js"></script>
+
     </head>
     <body>
-      <div id="background">
-        
+      <canvas id="fog"></canvas>
+      <div id="content"> <!-- content should always show on top of canvas -->
+        <h1>Victor Jiao</h1>
+
       </div>
-      <div id="all">
-        <div id="left">
-          <div id="avatar">
-
-          </div>
-          <div id="navigation">
-            <div class="navlink" id="highlighted-navlink">
-              <a href="/">VjiaoBlack</a>
-            </div>
-            <div class="navlink">
-              <a href="/about.html">About</a>
-            </div>
-            <div class="navlink">
-              <a href="/projects.html">Projects</a>
-            </div>
-            <div class="navlink">
-              <a href="/blog.html">Blog</a>
-            </div>
-            <div class="navlink">
-              <a href="/contact.html">Contact</a>
-            </div>
-          </div>
-        </div>
-
-        <div id="right">
-          <div id="content">
-            <h3 style="padding-top:30vh">
-    Student.
-</h3>
-
-<h3>
-    Musician.
-</h3>
-
-<h3>
-    Programmer.
-</h3>
-
-<script>
-document.getElementById("highlighted-navlink").removeAttribute("id");
-
-var id = document.createAttribute("id");
-id.value="highlighted-navlink";
-
-var navlinks = document.getElementsByClassName("navlink");
-
-navlinks[0].setAttributeNode(id);
-
-</script>
-
-          </div>
-
-        </div>
-      </div>
-
     </body>
 </html>
