@@ -12,6 +12,24 @@ html, body{
     padding: 0;
 }
 
+bg {
+    position: absolute;
+    background-color: #021b24;
+}
+
+div {
+/*    border-style: solid;
+    border-width: 1px;
+    border-color: white;*/
+}
+
+#top {
+    position: absolute;
+    text-align: center;
+    top: 200px;
+    width: 600px;
+    left: calc(50% - 310px);
+}
 
 h1 {
     position: absolute;
@@ -25,8 +43,8 @@ h1 {
     text-align: center;
     margin-top: 100px;
     font-size: 5em;
-
 }
+
 content {
     z-index: 1;
     position: absolute;

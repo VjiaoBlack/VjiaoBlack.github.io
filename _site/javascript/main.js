@@ -1,3 +1,5 @@
+
+
 window.onload = function setup() {
 
     setup_fog();

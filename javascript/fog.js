@@ -9,7 +9,7 @@ var size = 30;
 var fade_in;
 
 var intervalId;
-var FPS = 20;
+var FPS_fog = 60;
 
 
 
@@ -20,7 +20,7 @@ function setup_fog() {
         fogx[i] = Math.round(Math.random() * screen.width);
         fogy[i] = Math.round(Math.random() * screen.height);
 
-        vel = Math.random() * 1 + .2;
+        vel = Math.random() * .2 + .05;
         deg = Math.random() * 360;
 
         xvel[i] = vel * Math.cos(deg);
@@ -30,7 +30,7 @@ function setup_fog() {
         ctx = canvas.getContext('2d');
         // draw();
     }
-    intervalId = setInterval(fog_loop, 1000/FPS);
+    intervalId = setInterval(function(){fog_loop()}, 1000/FPS_fog);
 
 }
 

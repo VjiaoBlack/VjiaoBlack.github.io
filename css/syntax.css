@@ -2,3 +2,21 @@
     font-family: "heading-hairline";
     src: url('/fonts/Lato-Hai.ttf');
 }
+
+@font-face {
+    font-family: "link-regular";
+    src: url('/fonts/Dekar.otf');
+}
+
+@font-face {
+    font-family: "link-light";
+    src: url('/fonts/Dekar Light.otf');
+}
+
+a { /*Note: mouseover events are handled in javascript.*/
+    font-family: "link-regular";
+    text-decoration: none;
+    font-size: 1.3em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
