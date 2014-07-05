@@ -13,7 +13,7 @@ var exit = new Array(4)
 var link_small_size = 1.3;
 var link_large_size = 1.5;
 var padding_small = 2;
-var padding_large = 1.8;
+var padding_large = 1.6;
 var padding;
 var size;
 
@@ -27,15 +27,15 @@ function grow (element) {
     element.style.fontSize = size.toString().concat("em");
 
     if (padding > padding_large) {
-        padding -= 0.02;
+        padding -= 0.04;
     } else {
         clearInterval(hover[element.id]);
         padding = padding_large;
     }
     console.log(padding);
     console.log("size ".concat(size.toString()));
-    element.style.fontSize = paddingRight.toString().concat("em");
-    element.style.fontSize = paddingLeft.toString().concat("em");
+    element.style.paddingLeft = padding.toString().concat("em");
+    element.style.paddingRight = padding.toString().concat("em");
 }
 
 function shrink (element) {
@@ -48,7 +48,7 @@ function shrink (element) {
     element.style.fontSize = size.toString().concat("em");
 
     if (padding < padding_small) {
-        padding += 0.02;
+        padding += 0.04;
     } else {
         clearInterval(exit[element.id]);
         padding = padding_small;
@@ -56,8 +56,8 @@ function shrink (element) {
 
     console.log(padding);
     console.log("size ".concat(size.toString()));
-    element.style.fontSize = paddingRight.toString().concat("em");
-    element.style.fontSize = paddingLeft.toString().concat("em");
+    element.style.paddingLeft = padding.toString().concat("em");
+    element.style.paddingRight = padding.toString().concat("em");
 
 }
 
