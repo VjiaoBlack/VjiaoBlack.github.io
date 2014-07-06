@@ -12,66 +12,42 @@ var exit = new Array(4)
 
 var link_small_size = 1.3;
 var link_large_size = 1.5;
-var padding_small = 2;
-var padding_large = 1.6;
-var padding;
+var sizes = new Array(4);
+
 var size;
 
 function grow (element) {
-    if (size < link_large_size) {
-        size += 0.02;
+    if (sizes[element.id] < link_large_size) {
+        sizes[element.id] += 0.02;
+        console.log("what');");
     } else {
         clearInterval(hover[element.id]);
-        size = link_large_size;
+        sizes[element.id] = link_large_size;
     }
-    element.style.fontSize = size.toString().concat("em");
+    element.style.fontSize = sizes[element.id].toString().concat("em");
 
-    if (padding > padding_large) {
-        padding -= 0.04;
-    } else {
-        clearInterval(hover[element.id]);
-        padding = padding_large;
-    }
-    console.log(padding);
-    console.log("size ".concat(size.toString()));
-    element.style.paddingLeft = padding.toString().concat("em");
-    element.style.paddingRight = padding.toString().concat("em");
-}
 
 function shrink (element) {
-    if (size > link_small_size) {
-        size -= 0.02;
+    if (sizes[element.id] > link_small_size) {
+        sizes[element.id] -= 0.02;
     } else {
         clearInterval(exit[element.id]);
-        size = link_small_size;
+        sizes[element.id] = link_small_size;
     }
-    element.style.fontSize = size.toString().concat("em");
-
-    if (padding < padding_small) {
-        padding += 0.04;
-    } else {
-        clearInterval(exit[element.id]);
-        padding = padding_small;
-    }
-
-    console.log(padding);
-    console.log("size ".concat(size.toString()));
-    element.style.paddingLeft = padding.toString().concat("em");
-    element.style.paddingRight = padding.toString().concat("em");
-
+    element.style.fontSize = sizes[element.id].toString().concat("em");
 }
 
 function l_hover(event) {
-    size = link_small_size;
+    sizes[event.target.id] = link_small_size;
     clearInterval(exit[event.target.id]);
-    hover[event.target.id] = setInterval(function(){grow(event.target)}, 1000/FPS); // problem with the function within setInterval.
+    hover[event.target.id] = setInterval(function(){grow(event.target)}, 1000/FPS);
 }
 
 function l_exit(event) {
     size = link_large_size;
     clearInterval(hover[event.target.id]);
     exit[event.target.id] = setInterval(function(){shrink(event.target)}, 1000/FPS);
-    intervalId = setInterval(function(){fog_loop()}, 1000/FPS_fog);
+
 }
 
 

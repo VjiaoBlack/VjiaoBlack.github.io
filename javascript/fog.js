@@ -5,7 +5,7 @@ var fogy = new Array();
 var xvel = new Array();
 var yvel = new Array();
 var num_particles = 200;
-var size = 30;
+var square_size = 30;
 var fade_in;
 
 var intervalId;
@@ -32,6 +32,9 @@ function setup_fog() {
     }
     intervalId = setInterval(function(){fog_loop()}, 1000/FPS_fog);
 
+
+    document.getElementById("fog").setAttribute("height",screen.height.toString());
+    document.getElementById("fog").setAttribute("width",screen.width.toString());
 }
 
 function fog_loop() {
@@ -45,15 +48,16 @@ function layout_update() { // to be overloaded
 }
 
 function draw() {
-    document.getElementById("fog").setAttribute("height",screen.height.toString());
-    document.getElementById("fog").setAttribute("width",screen.width.toString());
 
     ctx.fillStyle="#01040f";
     ctx.fillRect(0,0,screen.width, screen.height);
     ctx.fillStyle="rgba(107,115,140,".concat(fade_in.toString());
     for (var i = 0; i < num_particles; i++) {
-        ctx.fillRect(fogx[i]-.5,fogy[i]-.5,size,size);
+        ctx.fillRect(fogx[i]-.5,fogy[i]-.5,square_size,square_size);
     }
+    // console.log(ctx.fillStyle);
+    // console.log(Math.round(fogx[i]).toString().concat(" ").concat(Math.round(fogy[i]).toString()));
+
 }
 
 function update() {
@@ -61,14 +65,14 @@ function update() {
         fogx[i] += xvel[i];
         fogy[i] += yvel[i];
         if (fogx[i] > screen.width && xvel[i] > 0) {
-            fogx[i] = -size;
-        } else if (fogx[i] + size < 0 && xvel[i] < 0) {
+            fogx[i] = -square_size;
+        } else if (fogx[i] + square_size < 0 && xvel[i] < 0) {
             fogx[i] = screen.width;
         }
 
         if (fogy[i]> screen.height && yvel[i] > 0) {
-            fogy[i] = -size;
-        } else if (fogy[i] + size < 0 && yvel[i] < 0) {
+            fogy[i] = -square_size;
+        } else if (fogy[i] + square_size < 0 && yvel[i] < 0) {
             fogy[i] = screen.height;
         }
     }

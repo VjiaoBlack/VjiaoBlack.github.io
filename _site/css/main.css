@@ -7,7 +7,7 @@
 */
 
 html, body{
-    background-color: #01040f;
+    background-color: white;
     margin: 0;
     padding: 0;
 }
@@ -43,10 +43,12 @@ h1 {
     text-align: center;
     margin-top: 100px;
     font-size: 5em;
+
+    vertical-align: middle;
 }
 
 content {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     left: 0;
     right: 0;
@@ -54,8 +56,12 @@ content {
     bottom: 0;
 }
 
+top {
+    display:inline;
+}
+
 fog {
-    z-index: 0;
+    z-index: -1;
     margin: 0;
     padding: 0;
     position: absolute;
