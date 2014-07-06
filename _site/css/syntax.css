@@ -17,7 +17,36 @@ a { /*Note: mouseover events are handled in javascript.*/
     font-family: "link-regular";
     text-decoration: none;
     font-size: 1.3em;
-    padding-left: 2em;
-    padding-right: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
 
+}
+
+p {
+    color: rgba(0,0,0,0);
+    font-family: "link-regular";
+    font-size: 14pt;
+    line-height: 20pt;
+}
+
+#textwrap{
+    width: calc(100% - 100px);
+    margin: 50px;
+    padding-top: 25px;
+    padding-bottom: 100px;
+
+    /*font*/
+}
+
+
+#middle {
+    postion: absolute;
+    margin-top: 250px;
+
+    width: 700px;
+    min-height: 400px;
+
+    margin-left: calc(50% - 350px);
+
+    background-color:rgba(16,16,36,0);
 }

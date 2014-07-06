@@ -4,6 +4,9 @@ var offset;
 var l_fade;
 var l_offset;
 
+var p_fade;
+var p_offset;
+
 var FPS = 60;
 
 var links = new Array(4);
@@ -50,7 +53,6 @@ function l_exit(event) {
 
 }
 
-
 function fade_in_name() {
     document.getElementById("name").color = "rgba(51,105,147,0)";
     document.getElementById("name").innerHTML="Victor Jiao";
@@ -68,16 +70,26 @@ function fade_in_links() {
     }
 }
 
+
+function fade_in_text() {
+    document.getElementById("middle").color= "rgba(16,16,36,0)";
+    //
+}
+
 function layout_init() {
     fade = 0;
     offset = 60;
     l_fade = 0;
     l_offset = 12;
+    p_offset = 32;
+    p_fade = 0;
     fade_in_name();
     fade_in_links();
+    fade_in_text();
 }
 
 function layout_update() {
+
     if (fade < 1) {
         fade += 0.04;
         document.getElementById("name").style.color = "rgba(51,105,147,".concat(fade.toString()).concat(")");
@@ -92,6 +104,7 @@ function layout_update() {
             offset = 0;
         }
     }
+
     if (fade >= 1 && offset <= 0) {
         if (l_fade < 1) {
             l_fade += 0.04;
@@ -109,6 +122,27 @@ function layout_update() {
             link_holder.style.paddingTop = l_offset.toString().concat("px");
             if (l_offset < .5) {
                 l_offset = 0;
+            }
+        }
+    }
+
+    if (l_fade >= 1) {
+        if (p_fade < .75) {
+            p_fade += 0.03;
+            document.getElementById("middle").style.backgroundColor = "rgba(16,16,36,".concat(p_fade.toString().concat(")"));
+            var ps = document.getElementsByTagName("p");
+            for (var i = 0; i < ps.length; i++) {
+                ps[i].style.color = "rgba(108,115,141,".concat(p_fade.toString().concat(")"));
+            }
+            if (p_fade > 0.73) {
+                p_fade = .75;
+            }
+        }
+        if (p_offset > 0) {
+            p_offset -= 1-p_fade * (4/3);
+            document.getElementById("middle").style.marginTop = (250+p_offset).toString().concat("px");
+            if (p_offset < 0.5) {
+                p_offset = 0;
             }
         }
     }

@@ -28,10 +28,8 @@ function setup_fog() {
     }
     if (canvas.getContext) {
         ctx = canvas.getContext('2d');
-        // draw();
     }
     intervalId = setInterval(function(){fog_loop()}, 1000/FPS_fog);
-
 
     document.getElementById("fog").setAttribute("height",screen.height.toString());
     document.getElementById("fog").setAttribute("width",screen.width.toString());
