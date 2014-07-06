@@ -25,7 +25,7 @@ function grow (element) {
         sizes[element.id] = link_large_size;
     }
     element.style.fontSize = sizes[element.id].toString().concat("em");
-
+}
 
 function shrink (element) {
     if (sizes[element.id] > link_small_size) {
