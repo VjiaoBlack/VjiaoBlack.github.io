@@ -1,0 +1,67 @@
+/*
+    #01040f very dark
+    #021b24 shadow
+    #234963 grayed turqoise
+    #336993 lit turquoise (its lit)
+    #6b738c light bluegray
+*/
+
+html, body{
+    background-color: #020810;
+    margin: 0;
+    padding: 0;
+}
+
+#bg {
+    position: absolute;
+    background-color: #021b24;
+}
+
+div {
+/*    border-style: solid;
+    border-width: 1px;
+    border-color: white;*/
+}
+
+#top {
+    position: absolute;
+    text-align: center;
+    top: 225px;
+    width: 600px;
+    left: calc(50% - 310px);
+}
+
+h1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: #336993;
+    font-family: "heading-hairline";
+    font-weight: 900;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 6em;
+    vertical-align: middle;
+}
+
+#content {
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#fog {
+    z-index: -1;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
