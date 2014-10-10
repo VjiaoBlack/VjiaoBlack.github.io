@@ -18,7 +18,8 @@ title: Victor Jiao - Home
                 to graduate in {{ site.data.profiles.graduatingYear }}
                 with a {{ site.data.profiles.degree }} in
                 {{ site.data.profiles.major }}. In my free time, I love
-                {{ site.data.profiles.hobbies }} and
+                {{ site.data.profiles.hobbies }}
+                <a href="http://github.com/VjiaoBlack">making cool things</a>, and
                 <a href={{site.data.profiles.voices}}>singing a cappella</a>.
             </p>
         </div>
@@ -29,6 +30,24 @@ title: Victor Jiao - Home
             <p>
                 Projects of various degrees of completion
             </p>
+                {% for project in site.data.projects %}
+            <p>
+
+                    <a href="{{ project.url }}">{{ project.name }}</a>
+                    -
+                    <span>{{ project.desc }}</span>
+
+                    {% if project.collab %}
+                        team members: me
+                        {% for teammate in project.collab %}
+                            ,   {{teammate.name}}
+
+                        {% endfor %}
+
+                    {% endif %}
+            </p>
+
+                {% endfor %}
         </div>
     </div>
 
@@ -38,6 +57,15 @@ title: Victor Jiao - Home
             <p>
                 Things that have been happening
             </p>
+
+                {% for post in site.posts %}
+            <p>
+
+                    <span>{{ post.date | date: "%b %e" }}</span>
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+            </p>
+
+                {% endfor %}
         </div>
     </div>
 
