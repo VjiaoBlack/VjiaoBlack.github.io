@@ -1,13 +1,33 @@
+/*
+#112
+#224
+#69e
+#f81
+*/
+
 html, body {
   margin: 0px;
   padding: 0px;
   height: 100%;
   width: 100%;
+  background-color: white;
 }
 body {
   opacity: 0;
   text-align: center;
 }
+
+
+#content {
+    width: 100%;
+    height: 100%;
+    background-color: #;
+}
+#leader {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 64px;
+}
+
 
 #header a {
   margin: 0 1em;
@@ -76,4 +96,14 @@ body {
 
 #wrapper {
   margin: 10px;
+}
+
+#main-projects {
+  width: 100%;
+  margin-left: 2%;
+  font-size: 14pt;
+}
+
+#main-projects a {
+  font-size: 18pt;
 }

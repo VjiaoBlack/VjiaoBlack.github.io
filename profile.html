@@ -1,0 +1,49 @@
+---
+layout: default
+title: Victor Jiao - Profile
+---
+<div id="pagewrap">
+<div id="header">
+    <h1>Victor Jiao</h1>
+    <hr/>
+    <a id="profile-l" href="/profile.html">Profile</a>
+    <a id="projects-l" href="/projects.html">Projects</a>
+    <a id="blog-l" href="/blog.html">Blog</a>
+</div>
+<div id="content">
+
+    <div id="main-projects">
+        <div id="wrapper">
+            <p>
+                Recent Projects
+            </p>
+                {% for project in site.data.projects %}
+            <p>
+
+                    <a href="{{ project.url }}">{{ project.name }}</a>
+                    -
+                    <span>{{ project.desc }}</span>
+
+<!--                     {% if project.collab %}
+                        team members: me
+                        {% for teammate in project.collab %}
+                            ,   {{teammate.name}}
+
+                        {% endfor %}
+
+                    {% endif %} -->
+            </p>
+
+                {% endfor %}
+        </div>
+    </div>
+
+
+
+
+</div>
+</div>
+<!--
+<div id="footer">
+afsd
+</div> -->

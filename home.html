@@ -4,7 +4,7 @@ title: Victor Jiao - Home
 ---
 <div id="header">
     <h1>Victor Jiao</h1>
-    <hr/>
+    <p></p>
     <a id="profile-l" href="/profile.html">Profile</a>
     <a id="projects-l" href="/projects.html">Projects</a>
     <a id="blog-l" href="/blog.html">Blog</a>
@@ -28,50 +28,35 @@ title: Victor Jiao - Home
     <div id="projects">
         <div id="wrapper">
             <p>
-                Projects of various degrees of completion
+                Recent Projects
             </p>
                 {% for project in site.data.projects %}
             <p>
-
                     <a href="{{ project.url }}">{{ project.name }}</a>
                     -
                     <span>{{ project.desc }}</span>
-
-                    {% if project.collab %}
-                        team members: me
-                        {% for teammate in project.collab %}
-                            ,   {{teammate.name}}
-
-                        {% endfor %}
-
-                    {% endif %}
             </p>
-
                 {% endfor %}
         </div>
     </div>
 
     <div id="blog">
         <div id="wrapper">
-
             <p>
                 Things that have been happening
             </p>
-
                 {% for post in site.posts %}
             <p>
-
-                    <span>{{ post.date | date: "%b %e" }}</span>
-                    <a href="{{ post.url }}">{{ post.title }}</a>
+                <span>{{ post.date | date: "%b %e" }}</span>
+                <a href="{{ post.url }}">{{ post.title }}</a>
             </p>
-
                 {% endfor %}
         </div>
     </div>
 
 
 </div>
-
+<!--
 <div id="footer">
 afsd
-</div>
+</div> -->

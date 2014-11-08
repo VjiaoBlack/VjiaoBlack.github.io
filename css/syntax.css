@@ -1,5 +1,30 @@
+/*
+font-family: 'Vollkorn', serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+
+#112
+#223
+#58d
+#d71
+
+*/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #446;
+}
+
+
 a {
     text-decoration: none;
+    color: #c71;
+}
+
+
+hr {
+    border-width: 1px;
+    border-type: solid;
 }
 
 h1 {

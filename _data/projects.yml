@@ -4,11 +4,6 @@
     a space-themed bullet-hell game, where you play as a defending
     spaceship destroying opponents with strange, blue-glowy bullets
     whilst simultaneously dodging enemy ammunition.
-  collab:
-    - name: Ben Kurtovic
-      git: https://github.com/earwig
-    - name: Josh Hofing
-      git: https://github.com/Hypersonic
 
 - name: Neighborhood
   link: https://github.com/VjiaoBlack/Neighborhood
@@ -27,9 +22,7 @@
   desc: >
     A texture mapper made from scratch with C/C++ and SDL and per-
     pixel access.
-  collab:
-    - name: Ben Kurtovic
-      git: https://github.com/earwig
+
 
 - name: terminvaders
   link: https://github.com/VjiaoBlack/terminvaders
@@ -37,15 +30,9 @@
     A terminal space shooter game with multiplayer capabilities.
     * Currently, the rendering for the menu needs to be fixed, but the
     game works otherwise.
-  collab:
-    - name: Ben Kurtovic
-      git: https://github.com/earwig
 
 - name: databanks
   link: https://github.com/VjiaoBlack/databanks
   desc: >
     A terminal data handler that retrieves and stores information as
     "index cards", complete with a find function and polished GUI.
-  collab:
-    - name: Ben Kurtovic
-      git: https://github.com/earwig
