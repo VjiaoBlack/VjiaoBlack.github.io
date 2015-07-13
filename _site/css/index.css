@@ -4,8 +4,8 @@
 
     float: left;
 
-    margin-right:2em;
+    margin-right: 3em;
 
-    /*-webkit-shape-outside:circle();*/
-    /*shape-outside:circle();*/
+    -webkit-shape-outside:circle();
+    shape-outside:circle();
 }
