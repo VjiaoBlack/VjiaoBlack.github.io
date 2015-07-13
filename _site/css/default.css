@@ -1,0 +1,156 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+.right {
+    float: right;
+    right: 0;
+}
+.left {
+    float: left;
+    left: 0;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#content {
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    top: 15%;
+    bottom: 15%;
+    /*background-color: gray;*/
+
+    min-height: 26em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 200;
+}
+
+
+a {
+    transition: color 0.2s ease;
+    text-decoration: none;
+    color: #063;
+
+    /* forces links to wrap selectability to itself. (and not the entire line) */
+    display: inline-block;
+}
+
+a:hover {
+    transition: color 0.2s ease;
+    color: #E90;
+}
+
+a.black {
+    transition: letter-spacing 0.2s ease;
+    color: #000;
+    letter-spacing: auto;
+    position: relative;
+    left: 3em;
+}
+
+a.black:hover {
+    transition: letter-spacing 0.2s ease;
+    letter-spacing: .1em;
+}
+
+div#name {
+    text-align: left;
+}
+
+h1 {
+    margin-bottom: .33em;
+    margin-top: .5em;
+}
+
+h3 {
+    margin-bottom: 0em;
+}
+
+
+h4 {
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: .25em;
+    text-align: left;
+}
+
+#header {
+    position: absolute;
+
+    width: 16em;
+    left: 0;
+    top: 0;
+    height: 8em;
+
+
+    text-align: center;
+    color: black;
+
+
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: #999;
+}
+
+#header #desc-first {
+    padding-left: 3em;
+}
+
+#header #desc-second {
+    padding-left: 5em;
+}
+
+#header #desc-third {
+    padding-left: 7em;
+}
+
+
+
+#sidebar {
+    position: absolute;
+    width: 13em;
+    padding: 1em;
+    padding-left: 3em;
+    padding-right: 0em;
+    left: 0;
+    top: 8em;
+
+    text-align: left;
+
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: #999;
+}
+
+#sidebar h2 {
+    margin-bottom: .25em;
+    margin-top: 1em;
+}
+
+#body {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 16em;
+    bottom: 0em;
+    padding: .5em;
+    padding-left: 3em;
+    font-weight: 300;
+}
