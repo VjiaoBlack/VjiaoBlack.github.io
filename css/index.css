@@ -1,11 +1,53 @@
-#victor {
-    height: 15em;
-    width: 15em;
+@media (min-width: 78em) {
 
-    float: left;
+    #victor {
+        height: 20em;
+        width: 20em;
 
-    margin-right: 3em;
+        float: left;
 
-    -webkit-shape-outside:circle();
-    shape-outside:circle();
+        margin-right: 3em;
+
+        -webkit-shape-outside:circle();
+        shape-outside:circle();
+    }
+
+    h2 {
+        white-space: nowrap;
+    }
 }
+
+@media (max-width: 78em) and (min-width: 60em) {
+    #victor {
+        height: 15em;
+        width: 15em;
+
+        margin-left: calc(50% - 7.5em);
+
+        margin-bottom: -1em;
+
+    }
+
+    p, h2 {
+        clear: both;
+    }
+}
+
+
+@media (max-width: 60em) {
+    #victor {
+        height: calc(50vw - 15em);
+        width: calc(50vw - 15em);
+
+        margin-left: calc(50% - 25vw + 7.5em);
+
+
+        float: left;
+
+    }
+
+    p, h2 {
+        clear: both;
+    }
+}
+
