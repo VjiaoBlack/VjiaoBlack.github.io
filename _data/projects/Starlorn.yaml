@@ -1,0 +1,12 @@
+title: Starlorn
+url: http://github.com/Hypersonic/Starlorn
+languages:
+    - Java
+collaborators:
+    - name: Ben Kurtovic
+      github: Earwig
+    - name: Josh Hofing
+      github: Hypersonic
+description: |
+    A simple bullet hell game with a flexible,
+    stacking upgrade system and randomly generated levels.

@@ -25,17 +25,28 @@ html, body {
     user-select: none;
 }
 
-#content {
-    width: 70%;
-    height: 70%;
-    position: absolute;
-    left: 15%;
-    right: 15%;
-    top: 15%;
-    bottom: 15%;
-    /*background-color: gray;*/
+@media (min-width: 78em) {
 
-    min-height: 26em;
+    #content {
+        width: 70%;
+        height: 70%;
+        position: absolute;
+        left: 15%;
+        right: 15%;
+        top: 15%;
+        /*background-color: gray;*/
+
+        min-height: 26em;
+    }
+}
+
+@media (max-width: 78em) {
+    #content {
+        position: absolute;
+        left: 3em;
+        right: 3em;
+        top: 15%;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,11 +103,8 @@ h4 {
 }
 
 #header {
-    position: absolute;
-
+    position: fixed;
     width: 16em;
-    left: 0;
-    top: 0;
     height: 8em;
 
 
@@ -124,13 +132,12 @@ h4 {
 
 
 #sidebar {
-    position: absolute;
+    position: fixed;
     width: 13em;
     padding: 1em;
     padding-left: 3em;
     padding-right: 0em;
-    left: 0;
-    top: 8em;
+    top: calc(15% + 8em);
 
     text-align: left;
 
@@ -144,13 +151,20 @@ h4 {
     margin-top: 1em;
 }
 
+#side {
+    float: left;
+}
 #body {
     position: absolute;
     top: 0;
+
     right: 0;
     left: 16em;
-    bottom: 0em;
     padding: .5em;
     padding-left: 3em;
+    margin-bottom: 15%;
     font-weight: 300;
+
 }
+
+

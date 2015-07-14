@@ -1,0 +1,11 @@
+title: databanks
+url: http://github.com/VjiaoBlack/databanks
+languages:
+    - C
+collaborators:
+    - name: Ben Kurtovic
+      github: Earwig
+description: |
+    A terminal-based flashcard-esque data storage software, with a built-in
+    find function that lets you search the text of the cards, and a pleasant
+    scrolling function for optimal viewing.

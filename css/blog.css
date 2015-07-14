@@ -1,0 +1,24 @@
+.title {
+    border-bottom-width: 1px;
+    border-bottom-color: #ccc;
+    border-bottom-style: solid;
+}
+
+.title * {
+    display: inline;
+}
+
+.title span.tag {
+    color: #369;
+    transition: color 0.2s ease;
+}
+
+.title span.tag:hover {
+    color: #E90;
+    transition: color 0.2s ease;
+}
+
+.post {
+    margin-bottom: 2em;
+    margin-left: auto;
+}

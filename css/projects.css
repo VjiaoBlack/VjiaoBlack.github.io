@@ -1,0 +1,29 @@
+.title {
+    border-bottom-width: 1px;
+    border-bottom-color: #ccc;
+    border-bottom-style: solid;
+}
+
+.title span.name {
+    color: #369;
+    transition: color 0.2s ease;
+}
+
+.title span.name:hover {
+    color: #E90;
+    transition: color 0.2s ease;
+}
+
+.title * {
+    display: inline;
+}
+
+.project {
+    margin-bottom: 2em;
+    margin-left: auto;
+}
+
+span {
+    font-family: 'Ubuntu Mono', Courier;
+}
+

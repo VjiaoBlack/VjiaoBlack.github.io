@@ -1,0 +1,11 @@
+title: terminvaders
+url: http://github.com/VjiaoBlack/terminvaders
+languages:
+    - C
+collaborators:
+    - name: Ben Kurtovic
+      github: Earwig
+description: |
+    A terminal-based shooter game built from scratch with randomized
+    enemies and progressively difficult AI. Supports different kinds of
+    bullets, as well as a multiplayer mode.
