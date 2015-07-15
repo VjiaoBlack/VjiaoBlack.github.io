@@ -9,4 +9,4 @@ short: |
 layout: post
 ---
 
-heyyy
+<a href="/index.html">Go back, this site is not finished! Sorry!</a>
