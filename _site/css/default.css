@@ -73,16 +73,11 @@ a.black {
     color: #000;
     letter-spacing: auto;
     position: relative;
-    left: 3em;
 }
 
 a.black:hover {
     transition: letter-spacing 0.2s ease;
     letter-spacing: .1em;
-}
-
-div#name {
-    text-align: left;
 }
 
 h1 {
@@ -102,42 +97,12 @@ h4 {
     text-align: left;
 }
 
-#header {
-    position: fixed;
-    width: 16em;
-    height: 8em;
-
-
-    text-align: center;
-    color: black;
-
-
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-right-color: #999;
-}
-
-#header #desc-first {
-    padding-left: 3em;
-}
-
-#header #desc-second {
-    padding-left: 5em;
-}
-
-#header #desc-third {
-    padding-left: 7em;
-}
-
-
-
 #sidebar {
     position: fixed;
     width: 13em;
     padding: 1em;
     padding-left: 3em;
     padding-right: 0em;
-    top: calc(15% + 8em);
 
     text-align: left;
 
@@ -150,6 +115,24 @@ h4 {
     margin-bottom: .25em;
     margin-top: 1em;
 }
+
+#sidebar #desc-first {
+}
+
+#sidebar #desc-second {
+    padding-left: 2em;
+}
+
+#sidebar #desc-third {
+    padding-left: 4em;
+}
+
+#sidebar h1 {
+
+
+}
+
+
 
 #side {
     float: left;
