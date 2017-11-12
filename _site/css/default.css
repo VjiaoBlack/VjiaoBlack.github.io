@@ -5,6 +5,8 @@ html, body {
     position: absolute;
 
     font-family: 'Open Sans', sans-serif;
+
+    background-color: #EEEEEE;
 }
 
 .right {
@@ -28,12 +30,12 @@ html, body {
 @media (min-width: 78em) {
 
     #content {
-        width: 70%;
-        height: 70%;
+        width: 76%;
+        height: 76%;
         position: absolute;
-        left: 15%;
-        right: 15%;
-        top: 15%;
+        left: 12%;
+        right: 12%;
+        top: 12%;
         /*background-color: gray;*/
 
         min-height: 26em;
@@ -45,7 +47,7 @@ html, body {
         position: absolute;
         left: 3em;
         right: 3em;
-        top: 15%;
+        top: 12%;
     }
 }
 
@@ -53,6 +55,9 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 200;
 }
 
+p {
+    font-size: 1.25em;
+}
 
 a {
     transition: color 0.2s ease;
@@ -83,6 +88,11 @@ a.black:hover {
 h1 {
     margin-bottom: .33em;
     margin-top: .5em;
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
 }
 
 h3 {
@@ -95,11 +105,12 @@ h4 {
     padding: 0px;
     margin-bottom: .25em;
     text-align: left;
+    font-size: 1.25em;
 }
 
 #sidebar {
     position: fixed;
-    width: 13em;
+    width: 16em;
     padding: 1em;
     padding-left: 3em;
     padding-right: 0em;
@@ -113,41 +124,35 @@ h4 {
 
 #sidebar h2 {
     margin-bottom: .25em;
-    margin-top: 1em;
+    margin-top: 0.75em;
 }
 
 #sidebar #desc-first {
+    padding-left: 0em;
 }
 
 #sidebar #desc-second {
-    padding-left: 2em;
+    padding-left: 2.5em;
 }
 
 #sidebar #desc-third {
-    padding-left: 4em;
+    padding-left: 5em;
 }
-
-#sidebar h1 {
-
-
-}
-
-
 
 #side {
     float: left;
 }
+
 #body {
     position: absolute;
     top: 0;
 
     right: 0;
-    left: 16em;
+    left: 18em;
     padding: .5em;
     padding-left: 3em;
     margin-bottom: 15%;
     font-weight: 300;
-
 }
 
 

@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     $('a').click(function(e) {
         var url = $(this).attr("href");
         $("html").fadeOut("fast",function() { window.location = url; });
@@ -8,7 +7,6 @@ $(document).ready(function(){
 
     $("html").hide();
     $("html").fadeIn("fast");
-
 
     $("a.click")
 

@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<link rel="stylesheet" type="text/css" href="css/art.css">
+<script type="text/javascript" src="/scripts/art.js"></script>
+
+<div class="art">
+{% for art_hash in site.data.art %}
+{% assign art = art_hash[1] %}
+	<div class="btn" data-popup-open="{{ art.title }}" href="">
+		<div class="art-box" style="background-image:url({{ art.url }})">
+			<img class="filler" src="{{ art.url }}"/>
+		</div>
+	</div>
+
+
+	<div class="popup" data-popup="{{ art.title }}">
+        <img class="popup-img" data-popup-close="{{ art.title }}" src="{{ art.url }}"/>
+	</div>
+
+{% endfor %}
+</div>
