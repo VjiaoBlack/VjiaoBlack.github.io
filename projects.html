@@ -3,9 +3,8 @@ layout: default
 ---
 <link rel="stylesheet" type="text/css" href="css/projects.css">
 
-{% for project_hash in site.data.projects %}
-{% assign project = project_hash[1] %}
-
+{% assign project_list = site.projects | sort: "id" | reverse %}
+{% for project in project_list %}
 <div class="project">
     <div class="title">
         <a href="{{ project.url }}"><h3>{{ project.title }}</h3></a>

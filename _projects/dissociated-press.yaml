@@ -1,0 +1,10 @@
+---
+title: Dissociated Press
+id: 2015-01-01
+url: http://github.com/VjiaoBlack/dissociated-press
+languages:
+    - C
+description: |
+    A simple app to generate more text in the same style as some given text. 
+    Trained using a bigram language model.
+---

@@ -1,4 +1,6 @@
+---
 title: databanks
+id: 2013-10-01
 url: http://github.com/VjiaoBlack/databanks
 languages:
     - C
@@ -9,3 +11,4 @@ description: |
     A terminal-based flashcard-esque data storage software, with a built-in
     find function that lets you search the text of the cards, and a pleasant
     scrolling function for optimal viewing.
+---

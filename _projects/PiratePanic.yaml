@@ -1,0 +1,22 @@
+---
+title: Pirate Panic
+id: 2017-05-01
+url: http://github.com/VjiaoBlack/codename-ted
+languages:
+    - C++
+    - Ogre3D
+    - OpenGL
+collaborators:
+    - name: Chris Walker
+      github: cnwalker
+    - name: Jigar Shah
+      github: jigshahpuzzle
+    - name: Charlie Kupets
+      github: CKupets
+    - name: David Woldenberg
+      github: dwoldenberg1
+description: |
+    Led a team of five students to code a 4-way multiplayer game including sky and water rendering,
+    a robust server design, a custom physics engine, and a simple AI. Personally worked on the graphics
+    engine and integrating all of the components of the final game together.
+---

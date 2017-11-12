@@ -1,4 +1,6 @@
+---
 title: Oriadnos
+id: 2014-05-01
 url: http://github.com/VjiaoBlack/Oriadnos
 languages:
     - C
@@ -9,3 +11,4 @@ description: |
     A 3D graphics engine built from per-pixel rendering using SDL,
     complete with UV texture mapping, camera movement,
     simple collision detection, z-buffering, and simple lighting.
+---

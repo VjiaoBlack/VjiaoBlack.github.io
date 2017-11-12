@@ -1,0 +1,12 @@
+---
+title: Procedural Terrain Generation
+id: 2017-06-01
+url: http://github.com/VjiaoBlack/terrain-gen
+languages:
+    - C++
+    - SDL
+collaborators:
+description: |
+    Built a flexible and powerful framework for supporting randomized terrain generation.
+    Models climate, erosion, and rainfall dynamics in real-time.
+---

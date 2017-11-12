@@ -1,4 +1,6 @@
+---
 title: terminvaders
+id: 2013-11-01
 url: http://github.com/VjiaoBlack/terminvaders
 languages:
     - C
@@ -9,3 +11,4 @@ description: |
     A terminal-based shooter game built from scratch with randomized
     enemies and progressively difficult AI. Supports different kinds of
     bullets, as well as a multiplayer mode.
+---

@@ -1,0 +1,16 @@
+---
+title: Distributed Key-Value Store
+id: 2016-06-01
+url: 
+languages:
+    - Python
+collaborators:
+    - name: Ben Kurtovic
+      github: Earwig
+description: |
+    Implemented multi-paxos, a distributed algorithm for consistent 
+    and fault-tolerant key-value storage. Multi-paxos is a more efficient 
+    variant of the classic Paxos algorithm.
+---
+
+

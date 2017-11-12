@@ -1,4 +1,6 @@
+---
 title: Starlorn
+id: 2013-06-01
 url: http://github.com/Hypersonic/Starlorn
 languages:
     - Java
@@ -10,3 +12,4 @@ collaborators:
 description: |
     A simple bullet hell game with a flexible,
     stacking upgrade system and randomly generated levels.
+---

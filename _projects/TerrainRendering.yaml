@@ -1,0 +1,16 @@
+---
+title: Terrain Rendering Engine
+id: 2015-09-01
+url: http://github.com/VjiaoBlack/GraphicsEngine
+languages:
+    - C++
+    - OpenGL
+collaborators:
+    - name: Noah Krim
+      github: nkrim
+description: |
+    Rendered height maps and texture bitmaps with level of detail and deferred rendering algorithms.
+    Includes render systems for grass, water, and rain; fog effects; and detail-mapping.
+---
+
+

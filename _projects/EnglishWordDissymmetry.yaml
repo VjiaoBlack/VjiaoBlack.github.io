@@ -1,0 +1,14 @@
+---
+title: English Word Dissymmetry
+id: 2016-06-01
+url: 
+languages:
+    - R
+    - C++
+collaborators:
+description: |
+    A study on word dissymmetry in the English Language through 
+    analyzing word prediction accuracy on a language bigram model
+    given different amounts of the first or last phonemes in the
+    word.
+---
