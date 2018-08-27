@@ -1,7 +1,7 @@
 ---
 title: Weather Modelling
 id: 2017-05-01
-url: http://github.com/VjiaoBlack/weather-hmm
+link: http://github.com/VjiaoBlack/weather-hmm
 languages:
     - Python
     - scikit-learn
