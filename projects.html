@@ -3,7 +3,7 @@ layout: default
 ---
 <link rel="stylesheet" type="text/css" href="css/projects.css">
 
-{% assign project_list = site.projects | sort: "id" | reverse %}
+{% assign project_list = site.projects | sort: 'date' | reverse %}
 {% for project in project_list %}
 <div class="project">
     <div class="title">
