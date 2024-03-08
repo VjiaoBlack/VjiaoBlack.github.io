@@ -5,8 +5,7 @@ link:
 languages:
     - Python
 collaborators:
-    - name: Ben Kurtovic
-      github: Earwig
+    - name: Austin Byers
 description: |
     Implemented multi-paxos, a distributed algorithm for consistent 
     and fault-tolerant key-value storage. Multi-paxos is a more efficient 
