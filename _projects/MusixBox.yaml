@@ -1,0 +1,17 @@
+---
+title: MusixBox
+date: 2019-02-01 00:00:00
+link: 
+languages:
+    - Javascript
+collaborators:
+    - name: Jordan Cazamias
+description: |
+    Implemented the music algorithm for MusixBox - a procedural music-box-like music player.
+    I used Perlin noise to stimulate a few different "dimensions" of music - mood and such.
+    Then, I manually added in some chords and notes, in an organized way so that the algorithm
+    would know which notes to play when to create the desired effect (as dictated by the
+    Perlin noise).
+---
+
+
