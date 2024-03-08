@@ -3,7 +3,7 @@
         overflow: hidden;
         border-radius: 50%;
         aspect-ratio: 1;
-        height: 30em;
+        height: calc(min(50vw - 20em, 30em));
 
         float: left;
 
@@ -16,7 +16,7 @@
     }
     
     #victor {
-        height: 40em;
+        height: calc(min(40vw, 40em));
 
         margin-top: -8em;
         margin-left: -6em;
