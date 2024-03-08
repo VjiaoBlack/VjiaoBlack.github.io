@@ -1,8 +1,14 @@
 @media (min-width: 78em) {
-
+    #victor-container {
+        overflow: hidden;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        height: 30em;
+    }
+    
     #victor {
-        height: 20em;
-        width: 20em;
+        /* height: 20em;
+        width: 20em; */
 
         float: left;
 
@@ -21,10 +27,19 @@
 }
 
 @media (max-width: 78em) and (min-width: 60em) {
+    #victor-container {
+        overflow: hidden;
+        border-radius: 50%;
+        height: 25em;
+        width: 20em;
+    }
+    
     #victor {
-        height: 15em;
-        width: 15em;
-
+        height: 25em;
+        
+        margin-left: -5em;
+        margin-right: -5em;
+        /* margin-top: -2em; */
 
         padding-bottom: 1em;
         margin-top: 1em;
@@ -46,6 +61,13 @@
 
 
 @media (max-width: 60em) {
+    #victor-container {
+        overflow: hidden;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        height: 30em;
+    }
+
     #victor {
         height: calc(50vw - 15em);
         width: calc(50vw - 15em);
@@ -55,8 +77,6 @@
 
         float: left;
         margin-top: 1em;
-
-
     }
 
     p, h2 {
