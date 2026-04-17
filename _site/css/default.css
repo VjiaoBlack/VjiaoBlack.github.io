@@ -424,13 +424,33 @@ a { color: inherit; text-decoration: none; }
   transform: translateZ(0);
 }
 @starting-style { .gol-canvas { opacity: 0; } }
-.hero > *:not(.gol-canvas) {
+.hero > *:not(.gol-canvas):not(.petals-canvas) {
   position: relative;
   z-index: 1;                             /* all non-canvas hero content stacks above */
 }
 @media (prefers-reduced-motion: reduce) {
-  .gol-canvas { opacity: 0; pointer-events: none; }
+  .gol-canvas,
+  .petals-canvas { opacity: 0; pointer-events: none; }
 }
+
+/* Petals — living direction's alternative to GoL. Same placement, opacity
+   cross-fades when the user swaps direction. Pointer-events left on so the
+   cursor still influences the sim. */
+.petals-canvas {
+  position: absolute;
+  inset: -2rem;
+  width: calc(100% + 4rem);
+  height: calc(100% + 4rem);
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-slow) var(--ease);
+  will-change: transform;
+  contain: strict;
+  transform: translateZ(0);
+}
+body[data-direction="living"] .petals-canvas { opacity: 1; }
+body[data-direction="living"] .gol-canvas   { opacity: 0; pointer-events: none; }
 
 .portrait {
   float: right;
