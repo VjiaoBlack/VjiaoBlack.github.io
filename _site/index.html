@@ -11,9 +11,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+  <!-- SVG favicon for modern browsers; legacy .ico as fallback. -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="/favicon.ico">
+
   <link rel="stylesheet" type="text/css" href="/css/default.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="page">
     <header class="topbar">
       <a class="masthead" href="/">Victor Jiao</a>
@@ -26,11 +31,11 @@
         <a href="/projects.html">Projects</a>
         <a href="/art.html">Art</a>
         <a href="/about.html">About</a>
-        <a href="/res/victor_jiao_resume_2026_public.pdf">Résumé</a>
+        <a href="/res/victor_jiao_resume_2026_public.pdf" target="_blank" rel="noopener">Résumé</a>
       </nav>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <div class="hero">
   <canvas id="gol" class="gol-canvas" aria-hidden="true"></canvas>
 

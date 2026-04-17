@@ -59,6 +59,46 @@
    RESET + BASE */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ============================================================
+   FOCUS — keyboard users need visible focus on every interactive element.
+   :focus-visible only — mouse-click focus stays silent so the site isn't
+   littered with outlines on clicks. Accent color + 2px offset keeps the
+   outline clearly separated from the element. */
+:focus { outline: none; }
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+/* CTA button has a dark background — accent-green outline reads poorly on ink.
+   Use the paper color as the outline for contrast. */
+.cta:focus-visible {
+  outline-color: var(--paper);
+  outline-offset: 2px;
+}
+
+/* Skip-to-content link — visually hidden until focused, then jumps to the main.
+   Lets keyboard users bypass the topbar and land in the hero directly. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.5rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--f-mono);
+  font-size: 0.85rem;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 html, body {
   background: var(--paper);
   color: var(--ink);
@@ -581,7 +621,7 @@ a { color: inherit; text-decoration: none; }
   gap: 0.5rem 1.25rem;
   margin-bottom: 0.75rem;
 }
-.project h3 {
+.project h2 {
   font-family: var(--f-serif);
   font-variation-settings: "opsz" 72, "wght" 500, "SOFT" 40;
   font-size: 1.45rem;
@@ -589,7 +629,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink);
   transition: color var(--dur-fast) var(--ease);
 }
-.project a:hover h3 { color: var(--accent); }
+.project a:hover h2 { color: var(--accent); }
 .project .meta {
   display: flex;
   flex-wrap: wrap;

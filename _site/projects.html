@@ -11,9 +11,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+  <!-- SVG favicon for modern browsers; legacy .ico as fallback. -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="/favicon.ico">
+
   <link rel="stylesheet" type="text/css" href="/css/default.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="page">
     <header class="topbar">
       <a class="masthead" href="/">Victor Jiao</a>
@@ -26,11 +31,11 @@
         <a href="/projects.html">Projects</a>
         <a href="/art.html">Art</a>
         <a href="/about.html">About</a>
-        <a href="/res/victor_jiao_resume_2026_public.pdf">Résumé</a>
+        <a href="/res/victor_jiao_resume_2026_public.pdf" target="_blank" rel="noopener">Résumé</a>
       </nav>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <div class="projects-page">
   <h1>Projects</h1>
   <p class="subtitle">Small systems · Some games · Tooling · Things I've built along the way</p>
@@ -40,7 +45,7 @@
   <article class="project">
     <div class="title-row">
       
-        <h3>MusixBox</h3>
+        <h2>MusixBox</h2>
       
 
       
@@ -79,7 +84,7 @@ Perlin noise).
   <article class="project">
     <div class="title-row">
       
-        <a href="http://github.com/VjiaoBlack/shape-defense"><h3>Tower Defense</h3></a>
+        <a href="http://github.com/VjiaoBlack/shape-defense"><h2>Tower Defense</h2></a>
       
 
       
@@ -110,7 +115,7 @@ This project is equal-parts game development and game engine design.
   <article class="project">
     <div class="title-row">
       
-        <a href="http://github.com/VjiaoBlack/terrain-gen"><h3>Procedural Terrain Generation</h3></a>
+        <a href="http://github.com/VjiaoBlack/terrain-gen"><h2>Procedural Terrain Generation</h2></a>
       
 
       
@@ -139,7 +144,7 @@ a ray-tracing based shadow engine.
   <article class="project">
     <div class="title-row">
       
-        <a href="http://github.com/VjiaoBlack/weather-hmm"><h3>Weather Modelling</h3></a>
+        <a href="http://github.com/VjiaoBlack/weather-hmm"><h2>Weather Modelling</h2></a>
       
 
       
@@ -169,7 +174,7 @@ a higher-level sense of climate, and achieved a 15-30% accuracy boost beyond nai
   <article class="project">
     <div class="title-row">
       
-        <a href="http://github.com/VjiaoBlack/codename-ted"><h3>Pirate Panic</h3></a>
+        <a href="http://github.com/VjiaoBlack/codename-ted"><h2>Pirate Panic</h2></a>
       
 
       
@@ -228,7 +233,7 @@ engine and integrating all of the components of the final game together.
   <article class="project">
     <div class="title-row">
       
-        <h3>Distributed Key-Value Store</h3>
+        <h2>Distributed Key-Value Store</h2>
       
 
       
@@ -265,7 +270,7 @@ variant of the classic Paxos algorithm.
   <article class="project">
     <div class="title-row">
       
-        <h3>English Word Dissymmetry</h3>
+        <h2>English Word Dissymmetry</h2>
       
 
       
@@ -295,7 +300,7 @@ word.
   <article class="project">
     <div class="title-row">
       
-        <a href="http://github.com/VjiaoBlack/GraphicsEngine"><h3>Terrain Rendering Engine</h3></a>
+        <a href="http://github.com/VjiaoBlack/GraphicsEngine"><h2>Terrain Rendering Engine</h2></a>
       
 
       
@@ -333,7 +338,7 @@ Includes render systems for grass, water, and rain; fog effects; and detail-mapp
   <article class="project">
     <div class="title-row">
       
-        <a href="http://github.com/VjiaoBlack/Audio-Leap"><h3>Audio Leap</h3></a>
+        <a href="http://github.com/VjiaoBlack/Audio-Leap"><h2>Audio Leap</h2></a>
       
 
       
@@ -362,7 +367,7 @@ Includes render systems for grass, water, and rain; fog effects; and detail-mapp
   <article class="project">
     <div class="title-row">
       
-        <a href="http://github.com/VjiaoBlack/Wolf"><h3>Wolf</h3></a>
+        <a href="http://github.com/VjiaoBlack/Wolf"><h2>Wolf</h2></a>
       
 
       
@@ -387,7 +392,7 @@ Includes render systems for grass, water, and rain; fog effects; and detail-mapp
   <article class="project">
     <div class="title-row">
       
-        <a href="http://github.com/VjiaoBlack/dissociated-press"><h3>Dissociated Press</h3></a>
+        <a href="http://github.com/VjiaoBlack/dissociated-press"><h2>Dissociated Press</h2></a>
       
 
       
@@ -413,7 +418,7 @@ Trained using a bigram language model.
   <article class="project">
     <div class="title-row">
       
-        <a href="http://github.com/VjiaoBlack/Oriadnos"><h3>Oriadnos</h3></a>
+        <a href="http://github.com/VjiaoBlack/Oriadnos"><h2>Oriadnos</h2></a>
       
 
       
@@ -450,7 +455,7 @@ simple collision detection, z-buffering, and simple lighting.
   <article class="project">
     <div class="title-row">
       
-        <a href="http://github.com/VjiaoBlack/Oriadnos"><h3>Oriadnos</h3></a>
+        <a href="http://github.com/VjiaoBlack/Oriadnos"><h2>Oriadnos</h2></a>
       
 
       
@@ -487,7 +492,7 @@ simple collision detection, z-buffering, and simple lighting.
   <article class="project">
     <div class="title-row">
       
-        <a href="http://github.com/VjiaoBlack/terminvaders"><h3>terminvaders</h3></a>
+        <a href="http://github.com/VjiaoBlack/terminvaders"><h2>terminvaders</h2></a>
       
 
       
@@ -524,7 +529,7 @@ bullets, as well as a multiplayer mode.
   <article class="project">
     <div class="title-row">
       
-        <a href="http://github.com/VjiaoBlack/databanks"><h3>databanks</h3></a>
+        <a href="http://github.com/VjiaoBlack/databanks"><h2>databanks</h2></a>
       
 
       
@@ -561,7 +566,7 @@ scrolling function for optimal viewing.
   <article class="project">
     <div class="title-row">
       
-        <a href="http://github.com/Hypersonic/Starlorn"><h3>Starlorn</h3></a>
+        <a href="http://github.com/Hypersonic/Starlorn"><h2>Starlorn</h2></a>
       
 
       
@@ -603,7 +608,7 @@ stacking upgrade system and randomly generated levels.
 
   <article class="project">
     <div class="title-row">
-      <a href="https://github.com/VjiaoBlack"><h3>Other things on GitHub</h3></a>
+      <a href="https://github.com/VjiaoBlack" target="_blank" rel="noopener"><h2>Other things on GitHub</h2></a>
       <span class="meta">
         <span class="lang">C/C++</span>
         <span class="lang">Rust</span>

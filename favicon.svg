@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- On-brand favicon matching site design system:
+       paper-tone background, accent-green "#" glyph in mono — echoes the
+       GoL ASCII cells in the hero. -->
+  <rect width="64" height="64" rx="4" fill="#f3ede1"/>
+  <text x="32" y="32"
+        font-family="'JetBrains Mono', ui-monospace, monospace"
+        font-size="48"
+        font-weight="600"
+        text-anchor="middle"
+        dominant-baseline="central"
+        fill="#0e5d33">#</text>
+</svg>
