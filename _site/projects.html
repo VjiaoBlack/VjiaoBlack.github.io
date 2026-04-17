@@ -1,602 +1,632 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Victor Jiao</title>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/css/default.css">
-    <script type="text/javascript" src="/scripts/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="/scripts/default.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-11419055-10"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Victor Jiao</title>
+  <meta name="description" content="Small systems, games, tooling, and things I've built along the way.">
+  <meta name="view-transition" content="same-origin">
 
-      gtag('config', 'UA-11419055-10');
-    </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" type="text/css" href="/css/default.css">
 </head>
 <body>
-    <div id="content">
-        <div id="sidebar">
-            <a class="black" href="index.html"><h1 id="name">Victor Jiao</h1></a>
-            <h4 id="desc-first">
-                Games
-            </h4>
-            <h4 id="desc-second">
-                Tooling
-            </h4>
-            <h4 id="desc-third">
-                Interactions
-            </h4>
+  <div class="page">
+    <header class="topbar">
+      <div class="dateline">
+        <a href="#bio" class="dateline-link"><span>Vol.&nbsp;III</span></a>
+        <span>San Francisco</span>
+        <span>Apr 2026</span>
+      </div>
+      <nav class="topnav" aria-label="Main">
+        <a href="/projects.html">Projects</a>
+        <a href="/art.html">Art</a>
+        <a href="/about.html">About</a>
+        <a href="/res/victor_jiao_resume_2026_public.pdf">Résumé</a>
+      </nav>
+    </header>
 
-            <a href="projects.html"><h2 id="projects">Projects</h2></a>
-            <br>
+    <main>
+      <div class="projects-page">
+  <h1>Projects</h1>
+  <p class="subtitle">Small systems · Some games · Tooling · Things I've built along the way</p>
 
-            <!-- <a href="blog.html"><h2 id="blog">Blog</h2></a> -->
-            <!-- <br> -->
+  
+  
+  <article class="project">
+    <div class="title-row">
+      
+        <h3>MusixBox</h3>
+      
 
-            <a href="art.html"><h2 id="art">Art</h2></a>
-            <br>
+      
+        <span class="meta"><span>2019</span></span>
+      
 
-            <a href="res/victor_jiao_resume_2026_public.pdf"><h2 id="art">Resume</h2></a>
-            <br>
+      
+        <span class="meta">
+          
+            <span class="lang">Javascript</span>
+          
+        </span>
+      
 
-            <section id="contact">
-                <h2>Contact</h2>
-                <a href="mailto:vjiaoblack@gmail.com"><h4>vjiaoblack@gmail.com</h4></a>
-                <a href="https://www.github.com/VjiaoBlack"><h4>github.com/vjiaoblack</h4></a>
-                <a href="https://www.linkedin.com/in/vjiao/"><h4>linkedin.com/in/vjiao</h4></a>
-            </section>
-        </div>
-
-        <div id="body">
-            <link rel="stylesheet" type="text/css" href="css/projects.css">
-
-
-
-<div class="project">
-    <div class="title">
-        <a href=""><h3>MusixBox</h3></a>
-        &ensp;
-        &ensp;
-
-        
-            <span> Javascript </span>
-            &ensp;
-
-        
-        &ensp;
-
-
-        
-            <a href="http://github.com/"><span class="name">Jordan Cazamias</span></a>
-            &ensp;
-        
-
+      
+        <span class="meta">
+          
+            <span class="coder">
+              
+                Jordan Cazamias
+              
+            </span>
+          
+        </span>
+      
     </div>
 
-    <p>
-        Implemented the music algorithm for MusixBox - a procedural music-box-like music player.
+    <p class="description">Implemented the music algorithm for MusixBox - a procedural music-box-like music player.
 I used Perlin noise to stimulate a few different "dimensions" of music - mood and such.
 Then, I manually added in some chords and notes, in an organized way so that the algorithm
 would know which notes to play when to create the desired effect (as dictated by the
 Perlin noise).
-
-    </p>
-</div>
-
-
-<div class="project">
-    <div class="title">
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
         <a href="http://github.com/VjiaoBlack/shape-defense"><h3>Tower Defense</h3></a>
-        &ensp;
-        &ensp;
+      
 
-        
-            <span> C++ </span>
-            &ensp;
+      
+        <span class="meta"><span>2018</span></span>
+      
 
-        
-            <span> SDL2 </span>
-            &ensp;
+      
+        <span class="meta">
+          
+            <span class="lang">C++</span>
+          
+            <span class="lang">SDL2</span>
+          
+            <span class="lang">OpenGL(incoming)</span>
+          
+        </span>
+      
 
-        
-            <span> OpenGL(incoming) </span>
-            &ensp;
-
-        
-        &ensp;
-
-
-        
-
+      
     </div>
 
-    <p>
-        Built/building an Entity-Component-System game programming engine
+    <p class="description">Built/building an Entity-Component-System game programming engine
 with a quadtree-based collision system and a callback-based GUI system.
 This project is equal-parts game development and game engine design.
-
-    </p>
-</div>
-
-
-<div class="project">
-    <div class="title">
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
         <a href="http://github.com/VjiaoBlack/terrain-gen"><h3>Procedural Terrain Generation</h3></a>
-        &ensp;
-        &ensp;
+      
 
-        
-            <span> C++ </span>
-            &ensp;
+      
+        <span class="meta"><span>2017</span></span>
+      
 
-        
-            <span> SDL2 </span>
-            &ensp;
+      
+        <span class="meta">
+          
+            <span class="lang">C++</span>
+          
+            <span class="lang">SDL2</span>
+          
+        </span>
+      
 
-        
-        &ensp;
-
-
-        
-
+      
     </div>
 
-    <p>
-        Built/building a flexible and powerful framework for supporting randomized terrain generation.
+    <p class="description">Built/building a flexible and powerful framework for supporting randomized terrain generation.
 Models climate, erosion, and rainfall dynamics in real-time. Also supports 
 a ray-tracing based shadow engine.
-
-    </p>
-</div>
-
-
-<div class="project">
-    <div class="title">
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
         <a href="http://github.com/VjiaoBlack/weather-hmm"><h3>Weather Modelling</h3></a>
-        &ensp;
-        &ensp;
+      
 
-        
-            <span> Python </span>
-            &ensp;
+      
+        <span class="meta"><span>2017</span></span>
+      
 
-        
-            <span> scikit-learn </span>
-            &ensp;
+      
+        <span class="meta">
+          
+            <span class="lang">Python</span>
+          
+            <span class="lang">scikit-learn</span>
+          
+            <span class="lang">NumPy</span>
+          
+        </span>
+      
 
-        
-            <span> NumPy </span>
-            &ensp;
-
-        
-        &ensp;
-
-
-        
-
+      
     </div>
 
-    <p>
-        Analyzed weather data from airports by using statistical machine learning models. The model learned
+    <p class="description">Analyzed weather data from airports by using statistical machine learning models. The model learned
 a higher-level sense of climate, and achieved a 15-30% accuracy boost beyond naive methods.
-
-    </p>
-</div>
-
-
-<div class="project">
-    <div class="title">
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
         <a href="http://github.com/VjiaoBlack/codename-ted"><h3>Pirate Panic</h3></a>
-        &ensp;
-        &ensp;
+      
 
-        
-            <span> C++ </span>
-            &ensp;
+      
+        <span class="meta"><span>2017</span></span>
+      
 
-        
-            <span> Ogre3D </span>
-            &ensp;
+      
+        <span class="meta">
+          
+            <span class="lang">C++</span>
+          
+            <span class="lang">Ogre3D</span>
+          
+            <span class="lang">OpenGL</span>
+          
+        </span>
+      
 
-        
-            <span> OpenGL </span>
-            &ensp;
-
-        
-        &ensp;
-
-
-        
-            <a href="http://github.com/cnwalker"><span class="name">Chris Walker</span></a>
-            &ensp;
-        
-            <a href="http://github.com/jigshahpuzzle"><span class="name">Jigar Shah</span></a>
-            &ensp;
-        
-            <a href="http://github.com/CKupets"><span class="name">Charlie Kupets</span></a>
-            &ensp;
-        
-            <a href="http://github.com/dwoldenberg1"><span class="name">David Woldenberg</span></a>
-            &ensp;
-        
-
+      
+        <span class="meta">
+          
+            <span class="coder">
+              
+                <a href="https://github.com/cnwalker">Chris Walker</a>
+              
+            </span>
+          
+            <span class="coder">
+              
+                <a href="https://github.com/jigshahpuzzle">Jigar Shah</a>
+              
+            </span>
+          
+            <span class="coder">
+              
+                <a href="https://github.com/CKupets">Charlie Kupets</a>
+              
+            </span>
+          
+            <span class="coder">
+              
+                <a href="https://github.com/dwoldenberg1">David Woldenberg</a>
+              
+            </span>
+          
+        </span>
+      
     </div>
 
-    <p>
-        Led a team of five students to code a 4-way multiplayer game including sky and water rendering,
+    <p class="description">Led a team of five students to code a 4-way multiplayer game including sky and water rendering,
 a robust server design, a custom physics engine, and a simple AI. Personally worked on the graphics
 engine and integrating all of the components of the final game together.
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
+        <h3>Distributed Key-Value Store</h3>
+      
 
-    </p>
-</div>
+      
+        <span class="meta"><span>2016</span></span>
+      
 
+      
+        <span class="meta">
+          
+            <span class="lang">Python</span>
+          
+        </span>
+      
 
-<div class="project">
-    <div class="title">
-        <a href=""><h3>Distributed Key-Value Store</h3></a>
-        &ensp;
-        &ensp;
-
-        
-            <span> Python </span>
-            &ensp;
-
-        
-        &ensp;
-
-
-        
-            <a href="http://github.com/"><span class="name">Austin Byers</span></a>
-            &ensp;
-        
-
+      
+        <span class="meta">
+          
+            <span class="coder">
+              
+                Austin Byers
+              
+            </span>
+          
+        </span>
+      
     </div>
 
-    <p>
-        Implemented multi-paxos, a distributed algorithm for consistent 
+    <p class="description">Implemented multi-paxos, a distributed algorithm for consistent 
 and fault-tolerant key-value storage. Multi-paxos is a more efficient 
 variant of the classic Paxos algorithm.
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
+        <h3>English Word Dissymmetry</h3>
+      
 
-    </p>
-</div>
+      
+        <span class="meta"><span>2016</span></span>
+      
 
+      
+        <span class="meta">
+          
+            <span class="lang">R</span>
+          
+            <span class="lang">C++</span>
+          
+        </span>
+      
 
-<div class="project">
-    <div class="title">
-        <a href=""><h3>English Word Dissymmetry</h3></a>
-        &ensp;
-        &ensp;
-
-        
-            <span> R </span>
-            &ensp;
-
-        
-            <span> C++ </span>
-            &ensp;
-
-        
-        &ensp;
-
-
-        
-
+      
     </div>
 
-    <p>
-        A study on word dissymmetry in the English Language through 
+    <p class="description">A study on word dissymmetry in the English Language through 
 analyzing word prediction accuracy on a language bigram model
 given different amounts of the first or last phonemes in the
 word.
-
-    </p>
-</div>
-
-
-<div class="project">
-    <div class="title">
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
         <a href="http://github.com/VjiaoBlack/GraphicsEngine"><h3>Terrain Rendering Engine</h3></a>
-        &ensp;
-        &ensp;
+      
 
-        
-            <span> C++ </span>
-            &ensp;
+      
+        <span class="meta"><span>2015</span></span>
+      
 
-        
-            <span> OpenGL </span>
-            &ensp;
+      
+        <span class="meta">
+          
+            <span class="lang">C++</span>
+          
+            <span class="lang">OpenGL</span>
+          
+        </span>
+      
 
-        
-        &ensp;
-
-
-        
-            <a href="http://github.com/nkrim"><span class="name">Noah Krim</span></a>
-            &ensp;
-        
-
+      
+        <span class="meta">
+          
+            <span class="coder">
+              
+                <a href="https://github.com/nkrim">Noah Krim</a>
+              
+            </span>
+          
+        </span>
+      
     </div>
 
-    <p>
-        Rendered height maps and texture bitmaps with level of detail and deferred rendering algorithms.
+    <p class="description">Rendered height maps and texture bitmaps with level of detail and deferred rendering algorithms.
 Includes render systems for grass, water, and rain; fog effects; and detail-mapping.
-
-    </p>
-</div>
-
-
-<div class="project">
-    <div class="title">
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
         <a href="http://github.com/VjiaoBlack/Audio-Leap"><h3>Audio Leap</h3></a>
-        &ensp;
-        &ensp;
+      
 
-        
-            <span> Javascript </span>
-            &ensp;
+      
+        <span class="meta"><span>2015</span></span>
+      
 
-        
-            <span> HTML/CSS </span>
-            &ensp;
+      
+        <span class="meta">
+          
+            <span class="lang">Javascript</span>
+          
+            <span class="lang">HTML/CSS</span>
+          
+            <span class="lang">Leapmotion API</span>
+          
+        </span>
+      
 
-        
-            <span> Leapmotion API </span>
-            &ensp;
-
-        
-        &ensp;
-
-
-        
-
+      
     </div>
 
-    <p>
-        A simple Leapmotion app to play chords depending on user's hand position.
-
-    </p>
-</div>
-
-
-<div class="project">
-    <div class="title">
+    <p class="description">A simple Leapmotion app to play chords depending on user's hand position.
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
         <a href="http://github.com/VjiaoBlack/Wolf"><h3>Wolf</h3></a>
-        &ensp;
-        &ensp;
+      
 
-        
-            <span> C </span>
-            &ensp;
+      
+        <span class="meta"><span>2015</span></span>
+      
 
-        
-        &ensp;
+      
+        <span class="meta">
+          
+            <span class="lang">C</span>
+          
+        </span>
+      
 
-
-        
-
+      
     </div>
 
-    <p>
-        A 2D top down game where you fight ever-multiplying waves of zombies.
-
-    </p>
-</div>
-
-
-<div class="project">
-    <div class="title">
+    <p class="description">A 2D top down game where you fight ever-multiplying waves of zombies.
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
         <a href="http://github.com/VjiaoBlack/dissociated-press"><h3>Dissociated Press</h3></a>
-        &ensp;
-        &ensp;
+      
 
-        
-            <span> C </span>
-            &ensp;
+      
+        <span class="meta"><span>2015</span></span>
+      
 
-        
-        &ensp;
+      
+        <span class="meta">
+          
+            <span class="lang">C</span>
+          
+        </span>
+      
 
-
-        
-
+      
     </div>
 
-    <p>
-        A simple app to generate more text in the same style as some given text. 
+    <p class="description">A simple app to generate more text in the same style as some given text. 
 Trained using a bigram language model.
-
-    </p>
-</div>
-
-
-<div class="project">
-    <div class="title">
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
         <a href="http://github.com/VjiaoBlack/Oriadnos"><h3>Oriadnos</h3></a>
-        &ensp;
-        &ensp;
+      
 
-        
-            <span> C </span>
-            &ensp;
+      
+        <span class="meta"><span>2014</span></span>
+      
 
-        
-        &ensp;
+      
+        <span class="meta">
+          
+            <span class="lang">C</span>
+          
+        </span>
+      
 
-
-        
-            <a href="http://github.com/Earwig"><span class="name">Ben Kurtovic</span></a>
-            &ensp;
-        
-
+      
+        <span class="meta">
+          
+            <span class="coder">
+              
+                <a href="https://github.com/Earwig">Ben Kurtovic</a>
+              
+            </span>
+          
+        </span>
+      
     </div>
 
-    <p>
-        A 3D graphics engine built from per-pixel rendering using SDL,
+    <p class="description">A 3D graphics engine built from per-pixel rendering using SDL,
 complete with UV texture mapping, camera movement,
 simple collision detection, z-buffering, and simple lighting.
-
-    </p>
-</div>
-
-
-<div class="project">
-    <div class="title">
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
         <a href="http://github.com/VjiaoBlack/Oriadnos"><h3>Oriadnos</h3></a>
-        &ensp;
-        &ensp;
+      
 
-        
-            <span> C </span>
-            &ensp;
+      
+        <span class="meta"><span>2014</span></span>
+      
 
-        
-        &ensp;
+      
+        <span class="meta">
+          
+            <span class="lang">C</span>
+          
+        </span>
+      
 
-
-        
-            <a href="http://github.com/Earwig"><span class="name">Ben Kurtovic</span></a>
-            &ensp;
-        
-
+      
+        <span class="meta">
+          
+            <span class="coder">
+              
+                <a href="https://github.com/Earwig">Ben Kurtovic</a>
+              
+            </span>
+          
+        </span>
+      
     </div>
 
-    <p>
-        A 3D graphics engine built from per-pixel rendering using SDL,
+    <p class="description">A 3D graphics engine built from per-pixel rendering using SDL,
 complete with UV texture mapping, camera movement,
 simple collision detection, z-buffering, and simple lighting.
-
-    </p>
-</div>
-
-
-<div class="project">
-    <div class="title">
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
         <a href="http://github.com/VjiaoBlack/terminvaders"><h3>terminvaders</h3></a>
-        &ensp;
-        &ensp;
+      
 
-        
-            <span> C </span>
-            &ensp;
+      
+        <span class="meta"><span>2013</span></span>
+      
 
-        
-        &ensp;
+      
+        <span class="meta">
+          
+            <span class="lang">C</span>
+          
+        </span>
+      
 
-
-        
-            <a href="http://github.com/Earwig"><span class="name">Ben Kurtovic</span></a>
-            &ensp;
-        
-
+      
+        <span class="meta">
+          
+            <span class="coder">
+              
+                <a href="https://github.com/Earwig">Ben Kurtovic</a>
+              
+            </span>
+          
+        </span>
+      
     </div>
 
-    <p>
-        A terminal-based shooter game built from scratch with randomized
+    <p class="description">A terminal-based shooter game built from scratch with randomized
 enemies and progressively difficult AI. Supports different kinds of
 bullets, as well as a multiplayer mode.
-
-    </p>
-</div>
-
-
-<div class="project">
-    <div class="title">
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
         <a href="http://github.com/VjiaoBlack/databanks"><h3>databanks</h3></a>
-        &ensp;
-        &ensp;
+      
 
-        
-            <span> C </span>
-            &ensp;
+      
+        <span class="meta"><span>2013</span></span>
+      
 
-        
-        &ensp;
+      
+        <span class="meta">
+          
+            <span class="lang">C</span>
+          
+        </span>
+      
 
-
-        
-            <a href="http://github.com/Earwig"><span class="name">Ben Kurtovic</span></a>
-            &ensp;
-        
-
+      
+        <span class="meta">
+          
+            <span class="coder">
+              
+                <a href="https://github.com/Earwig">Ben Kurtovic</a>
+              
+            </span>
+          
+        </span>
+      
     </div>
 
-    <p>
-        A terminal-based flashcard-esque data storage software, with a built-in
+    <p class="description">A terminal-based flashcard-esque data storage software, with a built-in
 find function that lets you search the text of the cards, and a pleasant
 scrolling function for optimal viewing.
-
-    </p>
-</div>
-
-
-<div class="project">
-    <div class="title">
+</p>
+  </article>
+  
+  <article class="project">
+    <div class="title-row">
+      
         <a href="http://github.com/Hypersonic/Starlorn"><h3>Starlorn</h3></a>
-        &ensp;
-        &ensp;
+      
 
-        
-            <span> Java </span>
-            &ensp;
+      
+        <span class="meta"><span>2013</span></span>
+      
 
-        
-        &ensp;
+      
+        <span class="meta">
+          
+            <span class="lang">Java</span>
+          
+        </span>
+      
 
-
-        
-            <a href="http://github.com/Earwig"><span class="name">Ben Kurtovic</span></a>
-            &ensp;
-        
-            <a href="http://github.com/Hypersonic"><span class="name">Josh Hofing</span></a>
-            &ensp;
-        
-
+      
+        <span class="meta">
+          
+            <span class="coder">
+              
+                <a href="https://github.com/Earwig">Ben Kurtovic</a>
+              
+            </span>
+          
+            <span class="coder">
+              
+                <a href="https://github.com/Hypersonic">Josh Hofing</a>
+              
+            </span>
+          
+        </span>
+      
     </div>
 
-    <p>
-        A simple bullet hell game with a flexible,
+    <p class="description">A simple bullet hell game with a flexible,
 stacking upgrade system and randomly generated levels.
+</p>
+  </article>
+  
 
+  <article class="project">
+    <div class="title-row">
+      <a href="https://github.com/VjiaoBlack"><h3>Other things on GitHub</h3></a>
+      <span class="meta">
+        <span class="lang">C/C++</span>
+        <span class="lang">Rust</span>
+        <span class="lang">Python</span>
+        <span class="lang">Javascript</span>
+      </span>
+    </div>
+    <p class="description">
+      Older and in-progress experiments — iOS geofencing in Objective-C, data-visualization
+      pages, tile-based RPG stuff, terrain simulation in Rust. If you've heard me mention
+      something that isn't listed here, it's probably a school or work project I can't show
+      the source for — drop me a line and we can talk about it.
     </p>
+  </article>
 </div>
 
+    </main>
 
+    <footer class="colophon">
+      <span>Set in Fraunces &amp; JetBrains Mono</span>
+      <span>Hand-written CSS · OKLCH palette</span>
+    </footer>
+  </div>
 
-
-<div class="project">
-    <div class="title">
-        <a href="https://github.com/VjiaoBlack"><h3>other projects</h3></a>
-        &ensp;
-        &ensp;
-        <span>C/C++</span>
-        &ensp; <!-- tab -->
-        <span>Java</span>
-        &ensp; <!-- tab -->
-        <span>HTML/CSS</span>
-        &ensp; <!-- tab -->
-        <span>Javascript</span>
-        &emsp; <!-- tab -->
-    </div>
-
-    <p>
-        Check out my other work here!
-        I have projects ranging from iOS geofencing apps in Objective C to
-        data-visualization websites to tile-based RPG games in C++.
-        If you've heard or seen me mention something that's not on here,
-        it's probably a project I did for school or for work that I'm not
-        allowed to show the source code for. Feel free to send me an email
-        so we can talk about it!
-    </p>
-</div>
-
-
-        </div>
-
-    </div>
+  <script src="/scripts/default.js" defer></script>
 </body>
 </html>

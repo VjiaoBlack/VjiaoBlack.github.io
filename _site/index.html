@@ -1,100 +1,121 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Victor Jiao</title>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/css/default.css">
-    <script type="text/javascript" src="/scripts/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="/scripts/default.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-11419055-10"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Victor Jiao</title>
+  <meta name="description" content="Senior software engineer building systems that feel alive. Interaction systems at Meta Reality Labs. Previously Google Stadia and Magic Leap.">
+  <meta name="view-transition" content="same-origin">
 
-      gtag('config', 'UA-11419055-10');
-    </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" type="text/css" href="/css/default.css">
 </head>
 <body>
-    <div id="content">
-        <div id="sidebar">
-            <a class="black" href="index.html"><h1 id="name">Victor Jiao</h1></a>
-            <h4 id="desc-first">
-                Games
-            </h4>
-            <h4 id="desc-second">
-                Tooling
-            </h4>
-            <h4 id="desc-third">
-                Interactions
-            </h4>
+  <div class="page">
+    <header class="topbar">
+      <div class="dateline">
+        <a href="#bio" class="dateline-link"><span>Vol.&nbsp;III</span></a>
+        <span>San Francisco</span>
+        <span>Apr 2026</span>
+      </div>
+      <nav class="topnav" aria-label="Main">
+        <a href="/projects.html">Projects</a>
+        <a href="/art.html">Art</a>
+        <a href="/about.html">About</a>
+        <a href="/res/victor_jiao_resume_2026_public.pdf">Résumé</a>
+      </nav>
+    </header>
 
-            <a href="projects.html"><h2 id="projects">Projects</h2></a>
-            <br>
+    <main>
+      <div class="hero">
+  <div class="portrait">
+    <img src="/res/album_victor_large.jpeg" alt="Victor Jiao">
+  </div>
 
-            <!-- <a href="blog.html"><h2 id="blog">Blog</h2></a> -->
-            <!-- <br> -->
+  <h1>
+    <span class="w">Senior</span>
+    <span class="w">software</span>
+    <span class="w">engineer</span>
+    <span class="w">building</span>
+    <span class="w italic">systems</span>
+    <span class="w italic">that</span>
+    <span class="w italic">feel</span>
+    <span class="w italic">alive.</span>
+  </h1>
 
-            <a href="art.html"><h2 id="art">Art</h2></a>
-            <br>
+  <p class="lede">
+    I work on interaction systems at <a href="https://www.meta.com/realitylabs/">Meta Reality Labs</a>. Before that,
+    developer tooling and game-performance work at Google Stadia, and graphics systems
+    at Magic Leap. Outside of that I make <a href="/projects.html">small systems</a>,
+    sing with the <a href="https://sfgmc.org">SF Gay Men&#39;s Choir</a>, and chase the
+    feeling that software can still be a bit magic.
+    <button id="bio-toggle"
+            class="more-toggle"
+            aria-expanded="false"
+            aria-controls="bio-expand">
+      <span class="more-label">More</span>
+      <span class="more-arrow" aria-hidden="true">→</span>
+    </button>
+  </p>
 
-            <a href="res/victor_jiao_resume_2026_public.pdf"><h2 id="art">Resume</h2></a>
-            <br>
+  <div id="bio-expand" class="bio-expand" role="region" aria-labelledby="bio-toggle">
+    <div class="bio-inner">
+      <p>
+        <span class="bio-vol">Vol.&nbsp;III</span> opens with a move to San Francisco,
+        just as the pandemic was starting to lift. Senior engineer at Meta Reality
+        Labs now, working on interaction systems.
+      </p>
+      <p>
+        Earlier in the volume: co-founded <em>The Chromeatics</em> at Google SFO,
+        re-started Pride@SFO for a while, played with NAVGA for a bit. These days I
+        sing with the <a href="https://sfgmc.org">SF Gay Men&#39;s Choir</a>, throw
+        pottery and do woodworking, and host AI hack nights at home.
+      </p>
+      <p class="bio-footer">
+        Vols. I &amp; II — the earlier chapters — live in <a href="/about.html">/about</a>.
+      </p>
+    </div>
+  </div>
 
-            <section id="contact">
-                <h2>Contact</h2>
-                <a href="mailto:vjiaoblack@gmail.com"><h4>vjiaoblack@gmail.com</h4></a>
-                <a href="https://www.github.com/VjiaoBlack"><h4>github.com/vjiaoblack</h4></a>
-                <a href="https://www.linkedin.com/in/vjiao/"><h4>linkedin.com/in/vjiao</h4></a>
-            </section>
-        </div>
+  <div class="credstrip">
+    <span class="label">Currently</span>
+    <div class="cred-list">
+      <div class="cred">
+        <span class="name">Meta Reality Labs</span>
+        <span class="detail">Input systems · 2023–present · SF</span>
+      </div>
+      <div class="cred">
+        <span class="name">Google Stadia</span>
+        <span class="detail">Dev tooling &amp; game perf · 2020–2022</span>
+      </div>
+      <div class="cred">
+        <span class="name">Magic Leap</span>
+        <span class="detail">Graphics systems · 2018–2020</span>
+      </div>
+      <div class="cred">
+        <span class="name">UChicago CS</span>
+        <span class="detail">BS &amp; MS · Chicago</span>
+      </div>
+    </div>
+  </div>
 
-        <div id="body">
-            <link rel="stylesheet" type="text/css" href="css/index.css">
-
-<div id="victor-container">
-	<img alt="A picture of me." id="victor" src="res/album_victor_large.jpeg" class="left"></img>
+  <div class="cta-row">
+    <a class="cta" href="mailto:vjiaoblack@gmail.com">Email me</a>
+    <span class="cta-aside">or find me on <a href="https://github.com/VjiaoBlack">GitHub</a> / <a href="https://linkedin.com/in/vjiao/">LinkedIn</a></span>
+  </div>
 </div>
 
-<!-- spacing to start text lower on profile circle -->
-<br>
-<br>
+    </main>
 
-<h2>
-	Hey there!
-</h2>
+    <footer class="colophon">
+      <span>Set in Fraunces &amp; JetBrains Mono</span>
+      <span>Hand-written CSS · OKLCH palette</span>
+    </footer>
+  </div>
 
-<p>
-	I'm a senior software engineer in San Francisco. I grew up in NYC, went to 
-	<a href="https://en.wikipedia.org/wiki/Stuyvesant_High_School">Stuyvesant High School</a>, 
-	and then earned my bachelor's and master's in computer science <a href="http://www.uchicago.edu">The University of Chicago</a>. 
-	
-	After graduating, I got started at Magic Leap's Graphics Systems team, then worked on 
-	developer tooling and measuring game performance at Google Stadia, 
-	and now work on input systems at Meta Reality Labs.
-</p>
-
-<p>
-	I'm interested in interaction systems, developer tooling, and AI-assisted workflows, along with a bunch of other 
-	stuff: ceramics, woodworking, modern and classical choral music, origami,
-	volleyball, and the meaning and patterns behind human connection.
-	I sang and performed with <a href="http://www.voicesinyourhead.org">Voices
-	in Your Head</a> during my years at UChicago, including competing three times at the
-	<a href="https://varsityvocals.com/competitions/about-tournaments/">ICCA Finals</a>.
-	More recently, I co-founded and vocal directed The Chromeatics, Google SFO's a cappella
-	group, and I currently sing with <a href="https://www.sfgmc.org">the San Francisco Gay Men's Choir</a>. 
-</p>
-
-<p>
-	<a href="mailto:vjiaoblack@gmail.com">Send me an email</a> if you want
-	to chat, work on something together, or hire me! You can find my resume 
-	<a href="/res/victor_jiao_resume_2026_public.pdf">here</a>.
-</p>
-
-        </div>
-
-    </div>
+  <script src="/scripts/default.js" defer></script>
 </body>
 </html>

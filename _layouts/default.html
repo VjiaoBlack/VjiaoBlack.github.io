@@ -1,60 +1,45 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Victor Jiao</title>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/css/default.css">
-    <script type="text/javascript" src="/scripts/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="/scripts/default.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-11419055-10"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} — Victor Jiao{% else %}Victor Jiao{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: 'Senior software engineer building systems that feel alive.' }}">
+  <meta name="view-transition" content="same-origin">
 
-      gtag('config', 'UA-11419055-10');
-    </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" type="text/css" href="/css/default.css">
 </head>
 <body>
-    <div id="content">
-        <div id="sidebar">
-            <a class="black" href="index.html"><h1 id="name">Victor Jiao</h1></a>
-            <h4 id="desc-first">
-                Games
-            </h4>
-            <h4 id="desc-second">
-                Tooling
-            </h4>
-            <h4 id="desc-third">
-                Interactions
-            </h4>
+  <div class="page">
+    <header class="topbar">
+      <a class="masthead" href="/">Victor Jiao</a>
+      <div class="dateline">
+        <a href="/#bio" class="dateline-link"><span>Vol.&nbsp;III</span></a>
+        <span>San Francisco</span>
+        <span>Apr 2026</span>
+      </div>
+      <nav class="topnav" aria-label="Main">
+        <a href="/projects.html">Projects</a>
+        <a href="/art.html">Art</a>
+        <a href="/about.html">About</a>
+        <a href="/res/victor_jiao_resume_2026_public.pdf">Résumé</a>
+      </nav>
+    </header>
 
-            <a href="projects.html"><h2 id="projects">Projects</h2></a>
-            <br>
+    <main>
+      {{ content }}
+    </main>
 
-            <!-- <a href="blog.html"><h2 id="blog">Blog</h2></a> -->
-            <!-- <br> -->
+    <footer class="colophon">
+      <span>Set in Fraunces &amp; JetBrains Mono</span>
+      <span>Hand-written CSS · OKLCH palette</span>
+    </footer>
+  </div>
 
-            <a href="art.html"><h2 id="art">Art</h2></a>
-            <br>
-
-            <a href="res/victor_jiao_resume_2026_public.pdf"><h2 id="art">Resume</h2></a>
-            <br>
-
-            <section id="contact">
-                <h2>Contact</h2>
-                <a href="mailto:vjiaoblack@gmail.com"><h4>vjiaoblack@gmail.com</h4></a>
-                <a href="https://www.github.com/VjiaoBlack"><h4>github.com/vjiaoblack</h4></a>
-                <a href="https://www.linkedin.com/in/vjiao/"><h4>linkedin.com/in/vjiao</h4></a>
-            </section>
-        </div>
-
-        <div id="body">
-            {{ content }}
-        </div>
-
-    </div>
+  <script src="/scripts/default.js" defer></script>
 </body>
 </html>
