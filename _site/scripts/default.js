@@ -44,71 +44,117 @@
 })();
 
 // --- 2. Cursor-reactive typography + portrait follow ---
+// Perf rewrite after trace analysis (2026-04-17):
+//   - Region rect CACHED; no getBoundingClientRect in tick (was #1 layout thrash source)
+//   - Cursor vars set on .portrait (narrow invalidation scope) instead of :root (wide cascade)
+//   - mousemove listener only attached WHILE cursor is inside .hero — zero ticks elsewhere
+//   - target loop skipped when idle (cursor outside region, no props to update)
 (() => {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) return;
 
   const region = document.querySelector('.hero');
+  const portrait = document.querySelector('.portrait');
   const reactives = Array.from(document.querySelectorAll('.hero h1 .w, .topnav a, .cta'));
   if (!reactives.length) return;
-
-  const root = document.documentElement;
 
   let mx = 0, my = 0;
   let active = false;
   let rafId = 0;
+  let dirty = false;
+  let lastTickTime = 0;                     // throttle gate — browser can't keep up at 120Hz
+  const TICK_MIN_MS = 33;                   // ~30fps cap
 
+  // Cached geometry — refreshed on resize, scroll-end, fonts-ready.
   let targets = [];
+  let regionCx = 0, regionCy = 0, regionHw = 1, regionHh = 1;
+
   const remeasure = () => {
     targets = reactives.map((el) => {
       const r = el.getBoundingClientRect();
       return { el, cx: r.left + r.width / 2, cy: r.top + r.height / 2, radius: 240 };
     });
+    if (region) {
+      const r = region.getBoundingClientRect();
+      regionCx = r.left + r.width / 2;
+      regionCy = r.top + r.height / 2;
+      regionHw = r.width / 2 || 1;
+      regionHh = r.height / 2 || 1;
+    }
   };
   remeasure();
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(remeasure);
   }
   addEventListener('resize', remeasure);
-  addEventListener('scroll', remeasure, { passive: true });
+  let scrollTimer = 0;
+  addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(remeasure, 150);
+  }, { passive: true });
+
+  const setVar = (el, name, v) => el.style.setProperty(name, v);
 
   const tick = () => {
     rafId = 0;
 
-    if (region) {
-      const r = region.getBoundingClientRect();
-      const hx = (mx - (r.left + r.width / 2)) / (r.width / 2);
-      const hy = (my - (r.top + r.height / 2)) / (r.height / 2);
-      root.style.setProperty('--cursor-x', Math.max(-1, Math.min(1, hx)).toFixed(3));
-      root.style.setProperty('--cursor-y', Math.max(-1, Math.min(1, hy)).toFixed(3));
-      root.style.setProperty('--cursor-in', active ? '1' : '0');
+    // Throttle: ~30fps cap. At 120Hz the browser can't reshape variable-font
+    // glyphs fast enough to keep up with every rAF, and we drop frames. At 30fps
+    // reshape work is halved and frame budget comfortably holds.
+    const now = performance.now();
+    if (now - lastTickTime < TICK_MIN_MS) {
+      if (active || dirty) schedule();
+      return;
+    }
+    lastTickTime = now;
+
+    if (portrait) {
+      const hx = Math.max(-1, Math.min(1, (mx - regionCx) / regionHw));
+      const hy = Math.max(-1, Math.min(1, (my - regionCy) / regionHh));
+      setVar(portrait, '--cursor-x', hx.toFixed(2));
+      setVar(portrait, '--cursor-y', hy.toFixed(2));
+      setVar(portrait, '--cursor-in', active ? '1' : '0');
     }
 
-    for (const t of targets) {
-      const dx = mx - t.cx;
-      const dy = my - t.cy;
-      const d = Math.hypot(dx, dy);
-      const prox = active ? Math.max(0, 1 - d / t.radius) : 0;
-      const eased = prox * prox * (3 - 2 * prox);
-      t.el.style.setProperty('--prox', eased.toFixed(3));
+    if (active || dirty) {
+      let anyNonzero = false;
+      for (const t of targets) {
+        const dx = mx - t.cx;
+        const dy = my - t.cy;
+        const d = Math.hypot(dx, dy);
+        const prox = active ? Math.max(0, 1 - d / t.radius) : 0;
+        const eased = prox * prox * (3 - 2 * prox);
+        // toFixed(2) quantizes to 100 discrete values — when cursor motion doesn't
+        // cross a new 0.01 threshold, the string match lets the browser skip
+        // reshape entirely. Visible effect is indistinguishable from toFixed(3).
+        setVar(t.el, '--prox', eased.toFixed(2));
+        if (eased > 0.005) anyNonzero = true;
+      }
+      dirty = anyNonzero;
     }
   };
   const schedule = () => { if (!rafId) rafId = requestAnimationFrame(tick); };
 
-  addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; schedule(); }, { passive: true });
-  addEventListener('pointerdown', (e) => { mx = e.clientX; my = e.clientY; schedule(); }, { passive: true });
+  // The global mousemove handler is expensive — only attach it while cursor
+  // is over the hero. Everywhere else: zero ticks, zero work.
+  const onMove = (e) => { mx = e.clientX; my = e.clientY; schedule(); };
 
   if (region) {
-    region.addEventListener('pointerenter', () => { active = true; schedule(); });
+    region.addEventListener('pointerenter', () => {
+      active = true;
+      dirty = true;
+      addEventListener('mousemove', onMove, { passive: true });
+      schedule();
+    });
     region.addEventListener('pointerleave', () => {
       active = false;
+      removeEventListener('mousemove', onMove);
+      dirty = true;                        // one final tick to decay values to 0
       schedule();
-      setTimeout(schedule, 200);
     });
+    region.addEventListener('pointerdown', onMove, { passive: true });
   } else {
-    // No hero region on this page — keep nav reactive, activate globally.
-    active = true;
-    schedule();
+    // No hero region on this page — nothing to activate.
   }
 })();
 

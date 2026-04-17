@@ -91,6 +91,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  gap: 2rem;
   padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--rule);
 
@@ -100,6 +101,17 @@ a { color: inherit; text-decoration: none; }
               transform var(--dur-slow) var(--ease);
 }
 @starting-style { .topbar { opacity: 0; transform: translateY(-6px); } }
+
+.masthead {
+  font-family: var(--f-serif);
+  font-variation-settings: "opsz" 24, "wght" 600, "SOFT" 40;
+  font-size: 1rem;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  transition: color var(--dur-fast) var(--ease);
+  white-space: nowrap;
+}
+.masthead:hover { color: var(--accent); }
 
 .dateline {
   display: flex;
@@ -153,6 +165,37 @@ a { color: inherit; text-decoration: none; }
 .hero {
   padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 6vw, 4rem);
   position: relative;
+  isolation: isolate;                    /* creates a stacking context for the canvas */
+}
+
+/* Conway's Game of Life ambient background.
+   Canvas sits behind all hero content; non-canvas children float above via z-index.
+   Click anywhere in open hero space to spawn cell clusters. Pauses when cursor
+   is over text regions. See scripts/gol.js for the sim itself. */
+.gol-canvas {
+  position: absolute;
+  inset: -2rem;                           /* slight bleed beyond hero edges */
+  width: calc(100% + 4rem);
+  height: calc(100% + 4rem);
+  z-index: 0;
+  opacity: 0.75;                          /* further soften the already-low-contrast cells */
+  cursor: crosshair;
+  transition: opacity var(--dur-slow) var(--ease);
+
+  /* Promote canvas to its own compositor layer so scrolling just translates
+     the cached texture instead of repainting. contain: strict isolates it
+     from the rest of the page's layout/paint pipeline. */
+  will-change: transform;
+  contain: strict;
+  transform: translateZ(0);
+}
+@starting-style { .gol-canvas { opacity: 0; } }
+.hero > *:not(.gol-canvas) {
+  position: relative;
+  z-index: 1;                             /* all non-canvas hero content stacks above */
+}
+@media (prefers-reduced-motion: reduce) {
+  .gol-canvas { opacity: 0; pointer-events: none; }
 }
 
 .portrait {
@@ -689,4 +732,6 @@ a { color: inherit; text-decoration: none; }
   .hero h1 { font-size: 2rem; }
   .topnav { gap: 0.75rem; }
   .dateline span:not(:first-child) { display: none; }
+  .dateline { display: none; }   /* collapse dateline at narrow width — masthead + nav only */
+  .topbar { gap: 1rem; }
 }
