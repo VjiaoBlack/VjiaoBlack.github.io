@@ -158,6 +158,32 @@
   }
 })();
 
+// --- Time-of-day label + tint ---
+// Sets the "Afternoon / Dusk / Evening / ..." label in the dateline and
+// paints a subtle colored layer (warm at dawn, cool at night) behind the
+// page. Label is present on every page; tint applies site-wide.
+(() => {
+  const phases = [
+    { until:  6, name: 'Night',     tint: 'oklch(22% 0.04 260 / 0.10)' },
+    { until:  9, name: 'Dawn',      tint: 'oklch(88% 0.05 50 / 0.06)'  },
+    { until: 12, name: 'Morning',   tint: 'oklch(95% 0.02 80 / 0.04)'  },
+    { until: 17, name: 'Afternoon', tint: 'oklch(95% 0.015 85 / 0.02)' },
+    { until: 20, name: 'Dusk',      tint: 'oklch(75% 0.08 40 / 0.09)'  },
+    { until: 24, name: 'Evening',   tint: 'oklch(35% 0.05 260 / 0.10)' },
+  ];
+  const current = () => phases.find(p => new Date().getHours() < p.until);
+  const apply = () => {
+    const p = current();
+    const label = document.getElementById('tod-label');
+    if (label) label.textContent = p.name;
+    const layer = document.getElementById('tod-layer');
+    if (layer) layer.style.background = p.tint;
+  };
+  apply();
+  // Refresh every minute so Dusk → Evening transitions don't need a reload.
+  setInterval(apply, 60000);
+})();
+
 // --- 3. Bio expand toggle (home page only) ---
 (() => {
   const expand = document.getElementById('bio-expand');
