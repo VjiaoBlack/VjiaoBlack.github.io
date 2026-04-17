@@ -23,14 +23,22 @@
 
   const ctx = canvas.getContext('2d', { alpha: true });
   const CELL = 14;
-  const TICK_MS = 350;
+  const TICK_MS = 175;
   const SEED_DENSITY = 0.08;
   const SETTLE_STEPS = 3;
   const CELL_CHAR = '#';
   const CELL_FONT_PX = 13;
-  // Paper-family — lighter than v1 (less contrast with page = more subtle),
-  // slightly higher chroma so it still reads as warm color not grey.
-  const CELL_COLOR = 'oklch(86% 0.055 85)';
+  // Cell color is accent-tinted, direction-aware. Quiet reads as warm-paper
+  // with a hint of green (the accent); almanac and living lean further into
+  // their accents since the base palette gives more room for chroma there.
+  // Dimmer on almanac because the dark paper needs much less lightness to
+  // read the same subjective weight.
+  const CELL_COLORS = {
+    quiet:   'oklch(80% 0.04  150 / 0.55)',
+    almanac: 'oklch(56% 0.10  90  / 0.55)',
+    living:  'oklch(52% 0.15  25  / 0.35)',
+  };
+  const cellColor = () => CELL_COLORS[document.body.dataset.direction] || CELL_COLORS.quiet;
 
   let cols = 0, rows = 0;
   let grid, next;
@@ -47,7 +55,7 @@
     off.height = size;
     const gctx = off.getContext('2d');
     gctx.scale(dpr, dpr);
-    gctx.fillStyle = CELL_COLOR;
+    gctx.fillStyle = cellColor();
     gctx.font = `${CELL_FONT_PX}px 'JetBrains Mono', ui-monospace, monospace`;
     gctx.textBaseline = 'middle';
     gctx.textAlign = 'center';
@@ -216,4 +224,9 @@
     resize();
     startTick();
   }
+
+  // Rebuild the glyph cache when the user swaps directions so the # picks up
+  // the new accent. render() alone redraws the same cached glyph in old color.
+  new MutationObserver(() => { buildGlyph(); render(); })
+    .observe(document.body, { attributes: true, attributeFilter: ['data-direction'] });
 })();

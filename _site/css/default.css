@@ -48,6 +48,157 @@
   }
 }
 
+/* ============================================================
+   DIRECTIONS — easter-egg theme variants toggled via
+   ?direction=almanac|living URL param or the `~` key cycle.
+   Default (`quiet`) inherits the :root palette above; other
+   directions just swap CSS variables + layer a few flourishes.
+   ============================================================ */
+
+/* ALMANAC — dark mono, yellow accent, field-guide flourishes. */
+body[data-direction="almanac"] {
+  --paper:    oklch(18% 0.014 80);
+  --paper-2:  oklch(22% 0.016 80);
+  --ink:      oklch(96% 0.008 85);
+  --ink-soft: oklch(82% 0.014 85);
+  --muted:    oklch(62% 0.012 85);
+  --rule:     oklch(32% 0.014 80);
+  --accent:   oklch(82% 0.15 90);
+  --accent-2: oklch(88% 0.17 85);
+
+  font-family: var(--f-mono);
+  font-size: 15px;
+  font-variation-settings: normal;
+}
+@media (color-gamut: p3) {
+  body[data-direction="almanac"] {
+    --accent:   color(display-p3 0.94 0.78 0.22);
+    --accent-2: color(display-p3 0.97 0.82 0.28);
+  }
+}
+
+/* LIVING — warmer paper, red accent. Petals canvas deferred to Phase 3. */
+body[data-direction="living"] {
+  --paper:    oklch(96% 0.02 60);
+  --paper-2:  oklch(93% 0.028 55);
+  --ink:      oklch(22% 0.04 30);
+  --ink-soft: oklch(34% 0.04 30);
+  --muted:    oklch(52% 0.03 40);
+  --rule:     oklch(86% 0.018 60);
+  --accent:   oklch(52% 0.15 25);
+  --accent-2: oklch(60% 0.17 30);
+}
+@media (color-gamut: p3) {
+  body[data-direction="living"] {
+    --accent:   color(display-p3 0.75 0.24 0.18);
+    --accent-2: color(display-p3 0.82 0.32 0.22);
+  }
+}
+
+/* Grain opacity varies by direction — grain is part of the paper, and
+   almanac doesn't pretend to be paper. */
+body[data-direction="living"]  .grain { opacity: 0.22; }
+body[data-direction="almanac"] .grain { opacity: 0; }
+
+/* ---- Almanac flourishes — applied site-wide ---- */
+body[data-direction="almanac"] .masthead {
+  font-family: var(--f-mono);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+}
+body[data-direction="almanac"] .masthead::before {
+  content: "vj.";
+  color: var(--accent);
+  margin-right: 0.3em;
+}
+body[data-direction="almanac"] .topnav a {
+  font-family: var(--f-mono);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-variation-settings: normal;
+}
+body[data-direction="almanac"] .topnav a::before { content: "/ "; color: var(--muted); }
+body[data-direction="almanac"] .topnav a::after { background: var(--accent); }
+
+body[data-direction="almanac"] .hero h1,
+body[data-direction="almanac"] .projects-page h1,
+body[data-direction="almanac"] .art-page h1,
+body[data-direction="almanac"] .about-page h1 {
+  font-family: var(--f-mono);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 4.4vw, 3.2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  font-variation-settings: normal;
+}
+body[data-direction="almanac"] .projects-page h1::before,
+body[data-direction="almanac"] .art-page h1::before,
+body[data-direction="almanac"] .about-page h1::before {
+  content: "# ";
+  color: var(--accent);
+}
+/* Hero h1 per-word reactive spans: drop the variable-font axes and halt
+   the breathing on italics; wrap italics in [ ]. */
+body[data-direction="almanac"] .hero h1 .w {
+  font-variation-settings: normal;
+  transform: none;
+}
+body[data-direction="almanac"] .hero h1 .italic {
+  font-style: normal;
+  font-weight: 500;
+  animation: none;
+}
+body[data-direction="almanac"] .hero h1 .italic::before {
+  content: "[";
+  color: var(--muted);
+  margin-right: 0.1em;
+}
+body[data-direction="almanac"] .hero h1 .italic::after {
+  content: "]";
+  color: var(--muted);
+  margin-left: 0.1em;
+}
+
+body[data-direction="almanac"] .hero .lede,
+body[data-direction="almanac"] .volume p,
+body[data-direction="almanac"] .bio-inner p,
+body[data-direction="almanac"] .project .description {
+  font-family: var(--f-mono);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  font-variation-settings: normal;
+}
+
+body[data-direction="almanac"] .volume h2,
+body[data-direction="almanac"] .project h2 {
+  font-family: var(--f-mono);
+  font-weight: 500;
+  font-variation-settings: normal;
+}
+
+body[data-direction="almanac"] .portrait {
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px var(--rule);
+}
+body[data-direction="almanac"] .portrait::after { border-radius: 2px; }
+
+body[data-direction="almanac"] .cta {
+  font-family: var(--f-mono);
+  font-size: 0.9rem;
+  background: var(--accent);
+  color: var(--paper);
+  font-weight: 500;
+  border-radius: 0;
+  font-variation-settings: normal;
+}
+body[data-direction="almanac"] .cta::before {
+  content: "$ ";
+  opacity: 0.6;
+}
+body[data-direction="almanac"] .cta:hover { background: var(--accent-2); }
+
 @view-transition { navigation: auto; }
 ::view-transition-group(portrait),
 ::view-transition-group(name) {
@@ -98,6 +249,13 @@ button:focus-visible,
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
+/* <main tabindex="-1"> is a skip-link target, not an interactive element.
+   We want focus to land there for screen-reader jumping, but the default
+   focus-visible rule's 3px-offset outline draws a full-page border that
+   looks awful — especially on direction variants. Suppress it here. */
+main[tabindex="-1"]:focus,
+main[tabindex="-1"]:focus-visible { outline: none; }
 
 html, body {
   background: var(--paper);

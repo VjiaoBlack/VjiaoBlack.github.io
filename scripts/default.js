@@ -158,6 +158,45 @@
   }
 })();
 
+// --- Direction easter egg ---
+// Three visual directions: "quiet" (default), "almanac" (dark mono field
+// guide), "living" (warm-red paper). Not visible in UI — discoverable via
+// ?direction=foo in the URL or the `~` key to cycle.
+// State persists in localStorage so a switched direction holds across
+// navigations without URL params everywhere.
+(() => {
+  const VALID = ['quiet', 'almanac', 'living'];
+  const KEY = 'vj_direction';
+
+  const params = new URLSearchParams(location.search);
+  const fromUrl = params.get('direction');
+  const fromStore = (() => { try { return localStorage.getItem(KEY); } catch { return null; } })();
+  const initial = VALID.includes(fromUrl) ? fromUrl
+                 : VALID.includes(fromStore) ? fromStore
+                 : 'quiet';
+
+  const set = (d) => {
+    if (!VALID.includes(d)) return;
+    document.body.dataset.direction = d;
+    try { localStorage.setItem(KEY, d); } catch {}
+  };
+  set(initial);
+
+  // `~` (or backtick) cycles directions. Skip when focus is in a text field
+  // so typing a tilde into a form doesn't swap the theme.
+  const editable = (el) =>
+    el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable);
+  addEventListener('keydown', (e) => {
+    if (e.key !== '~' && e.key !== '`') return;
+    if (editable(e.target)) return;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    e.preventDefault();
+    const cur = document.body.dataset.direction || 'quiet';
+    const next = VALID[(VALID.indexOf(cur) + 1) % VALID.length];
+    set(next);
+  });
+})();
+
 // --- Time-of-day label + tint ---
 // Sets the "Afternoon / Dusk / Evening / ..." label in the dateline and
 // paints a subtle colored layer (warm at dawn, cool at night) behind the
@@ -177,11 +216,20 @@
     const label = document.getElementById('tod-label');
     if (label) label.textContent = p.name;
     const layer = document.getElementById('tod-layer');
-    if (layer) layer.style.background = p.tint;
+    // Almanac's already a mood-specific dark palette — multiply blend would
+    // just muddy it. Skip the tint layer there.
+    if (layer) {
+      const dir = document.body.dataset.direction;
+      layer.style.background = dir === 'almanac' ? 'transparent' : p.tint;
+    }
   };
   apply();
   // Refresh every minute so Dusk → Evening transitions don't need a reload.
   setInterval(apply, 60000);
+  // Re-apply on direction swap so the tint follows the palette.
+  new MutationObserver(apply).observe(document.body, {
+    attributes: true, attributeFilter: ['data-direction'],
+  });
 })();
 
 // --- 3. Bio expand toggle (home page only) ---
