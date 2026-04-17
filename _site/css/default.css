@@ -618,6 +618,118 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
+   ART PAGE — grid of hand-made things.
+   Replaces legacy art.css. Explicit 3 → 2 → 1 column grid with paper-tone
+   tiles + caption that reveals on hover. Click opens full-size in new tab. */
+.art-page { padding: clamp(2rem, 6vw, 4rem) 0; }
+.art-page h1 {
+  font-family: var(--f-serif);
+  font-variation-settings: "opsz" 144, "wght" 500, "SOFT" 40;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+.art-page .subtitle {
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+@media (max-width: 64rem) { .art-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 36rem) { .art-grid { grid-template-columns: 1fr; } }
+
+.art-tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  transition: transform var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+  will-change: transform;
+}
+.art-tile:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+.art-tile .thumb {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--paper-2);
+}
+.art-tile .caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 1rem;
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--paper);
+  background: linear-gradient(to top, oklch(20% 0.02 70 / 0.85), transparent);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.art-tile:hover .caption,
+.art-tile:focus-visible .caption { opacity: 1; transform: translateY(0); }
+.art-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ============================================================
+   EXTERNAL LINK GLYPH — ↗ after any new-tab link.
+   Attribute selector so no class is needed. Skipped on tile-style links
+   that already convey their own external affordance (art tiles, nav). */
+a[target="_blank"]:not(.art-tile):not(.topnav a):not(.cta)::after {
+  content: " ↗";
+  font-size: 0.75em;
+  color: var(--muted);
+  vertical-align: super;
+  margin-left: 0.1em;
+  transition: color var(--dur-fast) var(--ease);
+}
+a[target="_blank"]:hover::after { color: var(--accent); }
+
+/* ============================================================
+   HERO HINT — GoL discoverability. Fades in 2s after load, holds, decays.
+   Mono text, subtle, teaches once. */
+.hero-hint {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-top: 1.25rem;
+  opacity: 0;
+  pointer-events: none;
+  animation: hero-hint-cycle 12s var(--ease) 2s forwards;
+}
+.hero-hint::before {
+  content: "→ ";
+  color: var(--accent);
+}
+@keyframes hero-hint-cycle {
+  0%   { opacity: 0; }
+  12%  { opacity: 0.7; }
+  70%  { opacity: 0.7; }
+  100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-hint { animation: none; opacity: 0.7; }
+}
+
+/* ============================================================
    ABOUT / VOLUME ARCHIVE */
 .about-page { padding: clamp(2rem, 6vw, 4rem) 0; }
 .about-page h1 {
